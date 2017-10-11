@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.egrehtrhtr
+    // Do any additional setup after loading the view, typically from a nib.egrehtrhtr刷新个绿点点
 }
 
 
