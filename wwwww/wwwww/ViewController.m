@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.egrehtrhtr刷新个绿点点+1
+    
+    self.view.backgroundColor = [UIColor redColor] ;
+    // Do any additional setup after loading the view, typically from a nib.egrehtrhtr刷新个绿点点+1+1
+    
+    
 }
 
 
