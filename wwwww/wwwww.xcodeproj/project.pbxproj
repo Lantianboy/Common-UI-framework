@@ -12,6 +12,8 @@
 		096A8B571F9460D7004990FD /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A8B561F9460D7004990FD /* ViewController3.m */; };
 		096A8B5A1F9460E1004990FD /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A8B591F9460E1004990FD /* ViewController4.m */; };
 		096A8B5D1F9461C1004990FD /* TabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A8B5C1F9461C1004990FD /* TabbarVC.m */; };
+		09743A191F95A7B30033726C /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09743A181F95A7B30033726C /* NavigationController.m */; };
+		09743A1C1F95CB020033726C /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 09743A1B1F95CB020033726C /* ViewController5.m */; };
 		09E1E4F61F8CBC36001F0919 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E4F51F8CBC36001F0919 /* AppDelegate.m */; };
 		09E1E4F91F8CBC36001F0919 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E4F81F8CBC36001F0919 /* ViewController.m */; };
 		09E1E4FC1F8CBC36001F0919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1E4FA1F8CBC36001F0919 /* Main.storyboard */; };
@@ -50,6 +52,10 @@
 		096A8B591F9460E1004990FD /* ViewController4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController4.m; sourceTree = "<group>"; };
 		096A8B5B1F9461C1004990FD /* TabbarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarVC.h; sourceTree = "<group>"; };
 		096A8B5C1F9461C1004990FD /* TabbarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarVC.m; sourceTree = "<group>"; };
+		09743A171F95A7B30033726C /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		09743A181F95A7B30033726C /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
+		09743A1A1F95CB020033726C /* ViewController5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
+		09743A1B1F95CB020033726C /* ViewController5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
 		09E1E4F11F8CBC36001F0919 /* wwwww.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwwww.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1E4F41F8CBC36001F0919 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09E1E4F51F8CBC36001F0919 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +128,10 @@
 				09E1E4F81F8CBC36001F0919 /* ViewController.m */,
 				096A8B5B1F9461C1004990FD /* TabbarVC.h */,
 				096A8B5C1F9461C1004990FD /* TabbarVC.m */,
+				09743A1A1F95CB020033726C /* ViewController5.h */,
+				09743A1B1F95CB020033726C /* ViewController5.m */,
+				09743A171F95A7B30033726C /* NavigationController.h */,
+				09743A181F95A7B30033726C /* NavigationController.m */,
 				096A8B4F1F9460C1004990FD /* ViewController1.h */,
 				096A8B501F9460C1004990FD /* ViewController1.m */,
 				096A8B521F9460CD004990FD /* ViewController2.h */,
@@ -293,10 +303,12 @@
 				096A8B511F9460C1004990FD /* ViewController1.m in Sources */,
 				09E1E4F91F8CBC36001F0919 /* ViewController.m in Sources */,
 				096A8B5D1F9461C1004990FD /* TabbarVC.m in Sources */,
+				09743A191F95A7B30033726C /* NavigationController.m in Sources */,
 				09E1E5041F8CBC36001F0919 /* main.m in Sources */,
 				09E1E4F61F8CBC36001F0919 /* AppDelegate.m in Sources */,
 				096A8B541F9460CD004990FD /* ViewController2.m in Sources */,
 				096A8B571F9460D7004990FD /* ViewController3.m in Sources */,
+				09743A1C1F95CB020033726C /* ViewController5.m in Sources */,
 				096A8B5A1F9460E1004990FD /* ViewController4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = wwwww/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -473,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = wwwww/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

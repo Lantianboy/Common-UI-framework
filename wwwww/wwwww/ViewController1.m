@@ -80,14 +80,14 @@
     ViewController * vi = [[ViewController alloc] init ];
     vi.title = @"阳光明媚" ;
     vi.view.backgroundColor = [UIColor greenColor] ;
-    vi.hidesBottomBarWhenPushed = YES ;
+    //vi.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:vi animated:YES] ;
 }
 
 - (void)leftBarButtonItemClickde
 {
     ViewController * vi =[[ViewController alloc] init] ;
-    vi.hidesBottomBarWhenPushed = YES ;
+    //vi.hidesBottomBarWhenPushed = YES ;
     [self.navigationController pushViewController:vi animated:YES] ;
     
 }

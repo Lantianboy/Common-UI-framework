@@ -11,7 +11,8 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 #import "ViewController4.h"
-#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#import "NavigationController.h"
+
 @interface TabbarVC ()
 
 @end
@@ -53,10 +54,10 @@
     vc4.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_profile_selected"];
     
     
-    UINavigationController * na1 = [[UINavigationController alloc] initWithRootViewController:vc1] ;
-    UINavigationController * na2 = [[UINavigationController alloc] initWithRootViewController:vc2] ;
-    UINavigationController * na3 = [[UINavigationController alloc] initWithRootViewController:vc3] ;
-    UINavigationController * na4 = [[UINavigationController alloc] initWithRootViewController:vc4] ;
+    NavigationController * na1 = [[NavigationController alloc] initWithRootViewController:vc1] ;
+    NavigationController * na2 = [[NavigationController alloc] initWithRootViewController:vc2] ;
+    NavigationController * na3 = [[NavigationController alloc] initWithRootViewController:vc3] ;
+    NavigationController * na4 = [[NavigationController alloc] initWithRootViewController:vc4] ;
     
     self.viewControllers = @[na1,na2,na3,na4] ;
     
@@ -72,38 +73,14 @@
     tbb.tintColor=[UIColor orangeColor];
     //选中的颜色
     
-    [self isIPhoneX] ;
+    
 }
-//#pragma mark 测试tablet上移
-//- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    if (self.childViewControllers.count >0) {
-//        viewController.hidesBottomBarWhenPushed =YES;
-//    }
-//    //[super pushViewController:viewController animated:animated];
-//    CGRect frame =self.tabBarController.tabBar.frame;
-//    frame.origin.y =[UIScreen mainScreen].bounds.size.height -frame.size.height;
-//    self.tabBarController.tabBar.frame =frame;
-//}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)isIPhoneX{
-    if ([UIScreen instancesRespondToSelector:@selector(currentMode)]) {
-        return CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size);
-    }else{
-        return NO;
-    }
-}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ViewController5.h"
 @interface ViewController ()
 
 @end
@@ -22,7 +22,11 @@
     
     
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    ViewController5 * vi = [[ViewController5 alloc] init] ;
+    [self.navigationController pushViewController:vi animated:YES] ;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
