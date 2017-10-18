@@ -34,9 +34,12 @@
     tab.backgroundColor = [UIColor whiteColor] ;
     tab.delegate = self ;
     tab.dataSource = self ;
-    tab.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //取消多余的cell
+    tab.tableFooterView = [[UIView alloc]init] ;
+    //去掉tabcell下划线
+    //tab.separatorStyle = UITableViewCellSeparatorStyleNone;
     tab.showsVerticalScrollIndicator = NO;
-    /// iOS11 fix
+    // iOS11 fix
     if (@available(iOS 11.0, *)) {
         tab.estimatedRowHeight = 0;
         tab.estimatedSectionFooterHeight = 0;
@@ -47,19 +50,15 @@
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1 ;
+    return 6 ;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6 ;
+    return 1 ;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if ( section == 3) {
-        return 8 ;
-    }else{
-        return 0 ;
-    }
+    return section >= 4 ? 8 : 0 ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,8 +67,8 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:str] ;
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str] ;
     cell.selectionStyle = UITableViewCellSelectionStyleNone ;
-    cell.textLabel.text = indexPath.row % 2 ? @"你好！" : @"不好！" ;
-    cell.backgroundColor = indexPath.row % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
+    cell.textLabel.text = indexPath.section % 2 ? @"你好！" : @"不好！" ;
+    //cell.backgroundColor = indexPath.section % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
     
     
     return cell ;
@@ -81,6 +80,7 @@
     vi.title = @"阳光明媚" ;
     vi.view.backgroundColor = [UIColor greenColor] ;
     //vi.hidesBottomBarWhenPushed = YES ;
+    NSLog(@"点击了%ld",indexPath.section) ;
     [self.navigationController pushViewController:vi animated:YES] ;
 }
 
