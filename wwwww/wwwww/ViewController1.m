@@ -94,6 +94,7 @@
 
 - (void)rightBarButtonItemClicked
 {
+    //跳转到tabbar下标为一的
     [(TabbarVC * )[UIApplication sharedApplication].keyWindow.rootViewController setSelectedIndex:1] ;
 }
 - (void)didReceiveMemoryWarning {
