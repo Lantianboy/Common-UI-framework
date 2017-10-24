@@ -10,4 +10,6 @@
 
 @interface ViewXib : UIView
 
++ (instancetype)initView ;
+
 @end

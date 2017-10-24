@@ -10,6 +10,12 @@
 
 @implementation ViewXib
 
+
++ (instancetype)initView
+{
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ViewXib class]) owner:self options:nil] lastObject] ;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
