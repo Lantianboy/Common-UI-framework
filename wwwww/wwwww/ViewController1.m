@@ -9,9 +9,10 @@
 #import "ViewController1.h"
 #import "TabbarVC.h"
 #import "ViewController.h"
+#import "ViewXib.h"
 
 @interface ViewController1 ()<UITableViewDelegate,UITableViewDataSource>
-
+@property(nonatomic,strong) ViewXib * vix ;
 @end
 
 @implementation ViewController1
@@ -35,7 +36,7 @@
     tab.delegate = self ;
     tab.dataSource = self ;
     //取消多余的cell
-    tab.tableFooterView = [[UIView alloc]init] ;
+    tab.tableFooterView = self.vix ;
     //去掉tabcell下划线
     //tab.separatorStyle = UITableViewCellSeparatorStyleNone;
     tab.showsVerticalScrollIndicator = NO;
@@ -83,6 +84,17 @@
     NSLog(@"点击了%ld",indexPath.section) ;
     [self.navigationController pushViewController:vi animated:YES] ;
 }
+
+- (ViewXib *)vix
+{
+    if (!_vix) {
+        _vix = [ViewXib initView] ;
+        _vix.frame = CGRectMake(0, 0, 414, 400) ;
+        
+    }
+    return _vix ;
+}
+
 
 - (void)leftBarButtonItemClickde
 {

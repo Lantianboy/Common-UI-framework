@@ -15,23 +15,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0883.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="w11-ht-J68">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
-                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lfS-vO-NMo">
+                    <rect key="frame" x="177" y="132" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="DQA-Jw-Drm" firstAttribute="bottom" secondItem="w11-ht-J68" secondAttribute="bottom" id="dKx-H1-HvH"/>
-                <constraint firstItem="DQA-Jw-Drm" firstAttribute="trailing" secondItem="w11-ht-J68" secondAttribute="trailing" id="mK0-id-HH2"/>
-                <constraint firstItem="w11-ht-J68" firstAttribute="top" secondItem="DQA-Jw-Drm" secondAttribute="top" id="vD2-qk-rrD"/>
-                <constraint firstItem="w11-ht-J68" firstAttribute="leading" secondItem="DQA-Jw-Drm" secondAttribute="leading" id="vJC-34-moc"/>
-            </constraints>
+            <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="DQA-Jw-Drm"/>
-            <point key="canvasLocation" x="-18" y="-38"/>
+            <point key="canvasLocation" x="-27" y="-66"/>
         </view>
     </objects>
-    <resources>
-        <image name="IMG_0883.JPG" width="120" height="120"/>
-    </resources>
 </document>
