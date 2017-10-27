@@ -17,6 +17,7 @@
 		09851FE21FA1D6F800BDADA3 /* LinkageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FE11FA1D6F800BDADA3 /* LinkageUITests.m */; };
 		09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF11FA1D7CA00BDADA3 /* OneView.m */; };
 		09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */; };
+		09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E1FA2F6B900A0BC23 /* TowView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		09851FF11FA1D7CA00BDADA3 /* OneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneView.m; sourceTree = "<group>"; };
 		09851FF31FA1D7F200BDADA3 /* OneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneCollectionViewCell.h; sourceTree = "<group>"; };
 		09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneCollectionViewCell.m; sourceTree = "<group>"; };
+		09DB475D1FA2F6B900A0BC23 /* TowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TowView.h; sourceTree = "<group>"; };
+		09DB475E1FA2F6B900A0BC23 /* TowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */,
 				09851FF01FA1D7CA00BDADA3 /* OneView.h */,
 				09851FF11FA1D7CA00BDADA3 /* OneView.m */,
+				09DB475D1FA2F6B900A0BC23 /* TowView.h */,
+				09DB475E1FA2F6B900A0BC23 /* TowView.m */,
 			);
 			path = rightView;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				09851FC21FA1D6F800BDADA3 /* ViewController.m in Sources */,
 				09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */,
 				09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */,
+				09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */,
 				09851FCD1FA1D6F800BDADA3 /* main.m in Sources */,
 				09851FBF1FA1D6F800BDADA3 /* AppDelegate.m in Sources */,
 			);
