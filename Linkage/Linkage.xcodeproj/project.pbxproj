@@ -17,6 +17,7 @@
 		09851FE21FA1D6F800BDADA3 /* LinkageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FE11FA1D6F800BDADA3 /* LinkageUITests.m */; };
 		09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF11FA1D7CA00BDADA3 /* OneView.m */; };
 		09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */; };
+		098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098729911FA6FD0200AC2F2F /* LinkageMenuView.m */; };
 		09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E1FA2F6B900A0BC23 /* TowView.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		09851FF11FA1D7CA00BDADA3 /* OneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneView.m; sourceTree = "<group>"; };
 		09851FF31FA1D7F200BDADA3 /* OneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneCollectionViewCell.h; sourceTree = "<group>"; };
 		09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneCollectionViewCell.m; sourceTree = "<group>"; };
+		098729901FA6FD0200AC2F2F /* LinkageMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkageMenuView.h; sourceTree = "<group>"; };
+		098729911FA6FD0200AC2F2F /* LinkageMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkageMenuView.m; sourceTree = "<group>"; };
 		09DB475D1FA2F6B900A0BC23 /* TowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TowView.h; sourceTree = "<group>"; };
 		09DB475E1FA2F6B900A0BC23 /* TowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				09851FEF1FA1D7AA00BDADA3 /* rightView */,
+				0987298F1FA6FCA000AC2F2F /* Linkage */,
 				09851FBD1FA1D6F800BDADA3 /* AppDelegate.h */,
 				09851FBE1FA1D6F800BDADA3 /* AppDelegate.m */,
 				09851FC01FA1D6F800BDADA3 /* ViewController.h */,
@@ -153,6 +157,15 @@
 				09DB475E1FA2F6B900A0BC23 /* TowView.m */,
 			);
 			path = rightView;
+			sourceTree = "<group>";
+		};
+		0987298F1FA6FCA000AC2F2F /* Linkage */ = {
+			isa = PBXGroup;
+			children = (
+				098729901FA6FD0200AC2F2F /* LinkageMenuView.h */,
+				098729911FA6FD0200AC2F2F /* LinkageMenuView.m */,
+			);
+			path = Linkage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */,
 				09851FC21FA1D6F800BDADA3 /* ViewController.m in Sources */,
 				09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */,
 				09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */,
