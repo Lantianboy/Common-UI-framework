@@ -10,9 +10,11 @@
 #import "TabbarVC.h"
 #import "ViewController.h"
 #import "ViewXib.h"
+#import "UIButton+btn.h"
 
 @interface ViewController1 ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) ViewXib * vix ;
+
 @end
 
 @implementation ViewController1
@@ -22,6 +24,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点我" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonItemClickde)] ;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点我" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemClicked)] ;
     self.view.backgroundColor = [UIColor redColor] ;
+    
     
     //self.navigationItem.searchController =YES ;
     
@@ -49,6 +52,7 @@
     [self.view addSubview:tab] ;
     
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 6 ;
@@ -70,6 +74,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone ;
     cell.textLabel.text = indexPath.section % 2 ? @"你好！" : @"不好！" ;
     //cell.backgroundColor = indexPath.section % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
+    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 10, 50, 30) borderColor:[UIColor redColor] borderWidth:2] ;
+    
+    [cell addSubview:btn] ;
     
     
     return cell ;

@@ -14,6 +14,7 @@
 		096A8B5D1F9461C1004990FD /* TabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 096A8B5C1F9461C1004990FD /* TabbarVC.m */; };
 		09743A191F95A7B30033726C /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09743A181F95A7B30033726C /* NavigationController.m */; };
 		09743A1C1F95CB020033726C /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 09743A1B1F95CB020033726C /* ViewController5.m */; };
+		0997C3631FA85DE000EA74CE /* UIButton+btn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0997C3621FA85DE000EA74CE /* UIButton+btn.m */; };
 		09E1E4F61F8CBC36001F0919 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E4F51F8CBC36001F0919 /* AppDelegate.m */; };
 		09E1E4F91F8CBC36001F0919 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E4F81F8CBC36001F0919 /* ViewController.m */; };
 		09E1E4FC1F8CBC36001F0919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1E4FA1F8CBC36001F0919 /* Main.storyboard */; };
@@ -58,6 +59,8 @@
 		09743A181F95A7B30033726C /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		09743A1A1F95CB020033726C /* ViewController5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController5.h; sourceTree = "<group>"; };
 		09743A1B1F95CB020033726C /* ViewController5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController5.m; sourceTree = "<group>"; };
+		0997C3611FA85DE000EA74CE /* UIButton+btn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+btn.h"; sourceTree = "<group>"; };
+		0997C3621FA85DE000EA74CE /* UIButton+btn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+btn.m"; sourceTree = "<group>"; };
 		09E1E4F11F8CBC36001F0919 /* wwwww.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwwww.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1E4F41F8CBC36001F0919 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09E1E4F51F8CBC36001F0919 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0997C3641FA8607A00EA74CE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				096A8B4F1F9460C1004990FD /* ViewController1.h */,
+				096A8B501F9460C1004990FD /* ViewController1.m */,
+				096A8B521F9460CD004990FD /* ViewController2.h */,
+				096A8B531F9460CD004990FD /* ViewController2.m */,
+				096A8B551F9460D7004990FD /* ViewController3.h */,
+				096A8B561F9460D7004990FD /* ViewController3.m */,
+				096A8B581F9460E1004990FD /* ViewController4.h */,
+				096A8B591F9460E1004990FD /* ViewController4.m */,
+				09743A1A1F95CB020033726C /* ViewController5.h */,
+				09743A1B1F95CB020033726C /* ViewController5.m */,
+				09FFCB711F9DDE5F00A7EB8B /* ViewXib.h */,
+				09FFCB721F9DDE5F00A7EB8B /* ViewXib.m */,
+				09FFCB741F9DDE7900A7EB8B /* ViewXib.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		09E1E4E81F8CBC36001F0919 = {
 			isa = PBXGroup;
 			children = (
@@ -134,21 +157,11 @@
 				09E1E4F81F8CBC36001F0919 /* ViewController.m */,
 				096A8B5B1F9461C1004990FD /* TabbarVC.h */,
 				096A8B5C1F9461C1004990FD /* TabbarVC.m */,
-				09743A1A1F95CB020033726C /* ViewController5.h */,
-				09743A1B1F95CB020033726C /* ViewController5.m */,
 				09743A171F95A7B30033726C /* NavigationController.h */,
 				09743A181F95A7B30033726C /* NavigationController.m */,
-				096A8B4F1F9460C1004990FD /* ViewController1.h */,
-				096A8B501F9460C1004990FD /* ViewController1.m */,
-				096A8B521F9460CD004990FD /* ViewController2.h */,
-				096A8B531F9460CD004990FD /* ViewController2.m */,
-				096A8B551F9460D7004990FD /* ViewController3.h */,
-				096A8B561F9460D7004990FD /* ViewController3.m */,
-				096A8B581F9460E1004990FD /* ViewController4.h */,
-				096A8B591F9460E1004990FD /* ViewController4.m */,
-				09FFCB711F9DDE5F00A7EB8B /* ViewXib.h */,
-				09FFCB721F9DDE5F00A7EB8B /* ViewXib.m */,
-				09FFCB741F9DDE7900A7EB8B /* ViewXib.xib */,
+				0997C3641FA8607A00EA74CE /* ViewController */,
+				0997C3611FA85DE000EA74CE /* UIButton+btn.h */,
+				0997C3621FA85DE000EA74CE /* UIButton+btn.m */,
 				09FFCB761F9DDE9800A7EB8B /* IMG_0883.JPG */,
 				09E1E4FA1F8CBC36001F0919 /* Main.storyboard */,
 				09E1E4FD1F8CBC36001F0919 /* Assets.xcassets */,
@@ -321,6 +334,7 @@
 				096A8B541F9460CD004990FD /* ViewController2.m in Sources */,
 				096A8B571F9460D7004990FD /* ViewController3.m in Sources */,
 				09743A1C1F95CB020033726C /* ViewController5.m in Sources */,
+				0997C3631FA85DE000EA74CE /* UIButton+btn.m in Sources */,
 				096A8B5A1F9460E1004990FD /* ViewController4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
