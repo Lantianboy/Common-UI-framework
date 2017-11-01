@@ -17,9 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor] ;
-    UIView * vi = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 300)] ;
-    vi.backgroundColor = [UIColor redColor] ;
-    [self.view addSubview:vi] ;
+   
     // Do any additional setup after loading the view.
 }
 

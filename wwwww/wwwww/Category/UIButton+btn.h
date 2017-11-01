@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (btn)
+
+//自定义方法
 - (instancetype)initWithFrame:(CGRect)frame borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth ;
+
+
+- (void)Hook_setTitle:(NSString *)str forState:(UIControlState *)sta;
+
 @end

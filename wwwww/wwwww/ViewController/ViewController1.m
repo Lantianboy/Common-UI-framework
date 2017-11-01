@@ -75,6 +75,10 @@
     cell.textLabel.text = indexPath.section % 2 ? @"你好！" : @"不好！" ;
     //cell.backgroundColor = indexPath.section % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
     UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 10, 50, 30) borderColor:[UIColor redColor] borderWidth:2] ;
+    //btn.backgroundColor = [UIColor orangeColor] ;
+    //[btn setTitleColor:[UIColor redColor] forState:0] ;
+    
+    [btn setTitle:@"111" forState:UIControlStateNormal] ;
     
     [cell addSubview:btn] ;
     

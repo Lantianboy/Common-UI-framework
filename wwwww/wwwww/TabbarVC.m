@@ -25,29 +25,29 @@
     
     
     ViewController1 *vc1 = [[ViewController1 alloc] init];
-    vc1.view.backgroundColor = [UIColor whiteColor];
+    
     vc1.tabBarItem.badgeValue = @"23";
     vc1.title = @"Home";
     vc1.tabBarItem.image = [UIImage imageNamed:@"tabbar_home"];
     vc1.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_home_selected"];
     
     ViewController2 *vc2 = [[ViewController2 alloc] init];
-    vc2.view.backgroundColor = [UIColor whiteColor];
+    
     vc2.tabBarItem.badgeValue = @"12";
     vc2.title = @"yi";
-    vc2.view.backgroundColor = [UIColor orangeColor] ;
+    
     vc2.tabBarItem.image = [UIImage imageNamed:@"tabbar_message_center"];
     vc2.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_message_center_selected"];
     
     ViewController3 *vc3 = [[ViewController3 alloc] init];
-    vc3.view.backgroundColor = [UIColor whiteColor];
+    
     vc3.tabBarItem.badgeValue = @"34";
     vc3.title = @"er";
     vc3.tabBarItem.image = [UIImage imageNamed:@"tabbar_discover"];
     vc3.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_discover_selected"];
     
     ViewController4 *vc4 = [[ViewController4 alloc] init];
-    vc4.view.backgroundColor = [UIColor whiteColor];
+    
     vc4.tabBarItem.badgeValue = @"99+";
     vc4.title = @"san";
     vc4.tabBarItem.image = [UIImage imageNamed:@"tabbar_profile"];
