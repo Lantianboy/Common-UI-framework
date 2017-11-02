@@ -8,23 +8,53 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "MMDrawerController.h"
+#import "LeftViewController.h"
+#import "MMDrawerVisualState.h"
+#import "MMExampleDrawerVisualStateManager.h"
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 @interface AppDelegate ()
-
+@property (nonatomic,strong)MMDrawerController * drawerController ;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    
+   // UITabBarController *tabVC = [[UITabBarController alloc] init];
     ViewController *mainVC = [[ViewController alloc] init];
-    tabVC.viewControllers = @[mainVC];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:tabVC];
-    self.window.rootViewController = nav;
+    //tabVC.viewControllers = @[mainVC];
+    
+    LeftViewController * left = [[LeftViewController alloc] init] ;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC] ;
+    nav.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]} ;
+    nav.navigationBar.barTintColor = [UIColor colorWithRed:44/255.0 green:185/255.0 blue:176/255.0 alpha:1];
+    
+    //创建中心视图和左侧视图
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:nav leftDrawerViewController:left] ;
+    //是否开启阴影效果
+    [self.drawerController setShowsShadow:YES] ;
+    //设置左侧视图最大宽度 屏幕宽度减一百
+    [self.drawerController setMaximumLeftDrawerWidth:kScreenWidth - 100] ;
+    //左侧视图开启手势
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll] ;
+    //左侧视图关闭手势
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll] ;
+    //设置左侧视图出现时的自定义动画
+    [self.drawerController setDrawerVisualStateBlock:^(MMDrawerController * drawerController, MMDrawerSide drawerSide, CGFloat percentVisible){
+        MMDrawerControllerDrawerVisualStateBlock block ;
+        block = [[MMExampleDrawerVisualStateManager sharedManager] drawerVisualStateBlockForDrawerSide:drawerSide] ;
+        if (block) {
+            block(drawerController, drawerSide, percentVisible) ;
+        }
+    }] ;//侧滑效果
+    
+    self.window.backgroundColor = [UIColor whiteColor] ;
+    self.window.rootViewController = self.drawerController ;
     
     
     
