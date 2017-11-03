@@ -11,6 +11,8 @@
 #import "OneView.h"
 #import "TowView.h"
 #import "OneCollectionViewCell.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 
 #define FUll_VIEW_WIDTH  ([[UIScreen mainScreen] bounds].size.width)
 #define FUll_VIEW_HEIGHT  ([[UIScreen mainScreen] bounds].size.height)
@@ -29,15 +31,24 @@
 
 @implementation ViewController
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    //设置打开抽屉模式
+    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll] ;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"首页" ;
     
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress)] ;
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES] ;
     
     //example view 1
     _oneView = [[OneView alloc] initWithFrame:CGRectMake(0, 0, FUll_VIEW_WIDTH - 101, FUll_VIEW_HEIGHT - NAVIGATION_HEIGHT)];
-    _oneView.dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
+    _oneView.dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"11",@"22",@"33",@"44"];
     
     //example view 2
     _twoView = [[OneView alloc] initWithFrame:CGRectMake(0, 0, FUll_VIEW_WIDTH - 101, FUll_VIEW_HEIGHT - NAVIGATION_HEIGHT)];
@@ -70,6 +81,10 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)leftButtonPress
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil] ;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

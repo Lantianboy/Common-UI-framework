@@ -28,10 +28,7 @@
 @property (nonatomic, strong) UIView * lineView ;
 @property (nonatomic, strong) UIView * rightView ;
 
-
 @end
-
-
 
 @implementation LinkageMenuView
 {
@@ -61,6 +58,9 @@
         }else if (FUll_VIEW_HEIGHT > FULLVIEW_FOR6){
             btnHeight = 42.7 ;
             DTScrollTag = 7 ;
+        }else if (kDevice_Is_iPhoneX){
+            btnHeight = 44 ;
+            DTScrollTag = 9 ;
         }
         _textSize = 14.0 ;
         _textColor = [UIColor blackColor] ;
@@ -87,11 +87,8 @@
         [self addSubview:self.menuView] ;
         [self addSubview:self.lineView] ;
         [self addSubview:self.rightView] ;
-        
-    
     }
     return self ;
-   
 }
     
 - (void)setSelectViewColor:(UIColor *)selectViewColor
@@ -107,10 +104,7 @@
         UIButton * button = [self viewWithTag:1] ;
         [button setTitleColor:_selectTextColor forState:UIControlStateNormal] ;
     }
-
 }
-
-        
 
 - (void)setSelectTextColor:(UIColor *)selectTextColor
 {
@@ -143,7 +137,6 @@
         _rightView = [[UIView alloc] initWithFrame:CGRectMake(MENU_WIDTH + LINEVIEW_WIDTH, NAVIGATION_HEIGHT, FUll_VIEW_WIDTH - MENU_WIDTH + LINEVIEW_WIDTH, FUll_VIEW_HEIGHT)] ;
     }
     return _rightView ;
-    
 }
 
 - (UIScrollView *)menuView
@@ -176,14 +169,9 @@
             [menuButton addTarget:self action:@selector(choseMenu:) forControlEvents:UIControlEventTouchUpInside] ;
             [_menuView addSubview:menuButton] ;
         }
-        
-        
-        
-        
     }
     return _menuView ;
 }
-
 
 #pragma mark - UIButton
 
@@ -196,7 +184,9 @@
         [lastButton setTitleColor:_textColor forState:UIControlStateNormal] ;
         
         CGFloat scroHeight = _menuView.contentSize.height - FUll_VIEW_HEIGHT + TABBAR_HEIGHT ;
-        
+        if (kDevice_Is_iPhoneX) {
+            
+        }else{
         if (menuArray.count > DTScrollTag * 2.0) {
             if (button.tag <= DTScrollTag) {
                 [UIView animateWithDuration:ANIMATION_TIME animations:^{
@@ -218,9 +208,9 @@
                 [UIView animateWithDuration:ANIMATION_TIME animations:^{
                     [_menuView setContentOffset:CGPointMake(0, scroHeight - blankHeight - 5.0) animated:NO];
                 }];
-            
             }
         }
+    }
         [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             _bottomView.frame = CGRectMake((MENU_WIDTH - BOTTOMVIEW_WIDTH) / 2.0,button.frame.origin.y +  half_blankHeight, BOTTOMVIEW_WIDTH, BOTTOMVIEW_HEIGHT) ;
         } completion:nil] ;
@@ -237,12 +227,8 @@
         }
         UIView * rigView = [viewArray objectAtIndex:viewtag] ;
         [_rightView addSubview:rigView] ;
-        
-        
     }
-    
 }
-
 
 #pragma mark - Dely method
 - (void)delayChangeTextColor
@@ -251,6 +237,5 @@
     [button setTitleColor:_selectTextColor forState:UIControlStateNormal] ;
     choseTag = newChoseTag ;
 }
-
 
 @end

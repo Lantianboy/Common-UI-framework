@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0953924F1FAC42D200DEC4DD /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0953924E1FAC42D200DEC4DD /* PushViewController.m */; };
 		095FB0951FAB0E9E00BC491B /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095FB0941FAB0E9E00BC491B /* LeftViewController.m */; };
 		095FB0C01FAB119E00BC491B /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 095FB0B61FAB119D00BC491B /* MMDrawerBarButtonItem.m */; };
 		095FB0C11FAB119E00BC491B /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095FB0B91FAB119D00BC491B /* MMDrawerController.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0953924D1FAC42D200DEC4DD /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		0953924E1FAC42D200DEC4DD /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 		095FB0931FAB0E9E00BC491B /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		095FB0941FAB0E9E00BC491B /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		095FB0A81FAB114900BC491B /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				09851FC11FA1D6F800BDADA3 /* ViewController.m */,
 				095FB0931FAB0E9E00BC491B /* LeftViewController.h */,
 				095FB0941FAB0E9E00BC491B /* LeftViewController.m */,
+				0953924D1FAC42D200DEC4DD /* PushViewController.h */,
+				0953924E1FAC42D200DEC4DD /* PushViewController.m */,
 				09851FC31FA1D6F800BDADA3 /* Main.storyboard */,
 				09851FC61FA1D6F800BDADA3 /* Assets.xcassets */,
 				09851FC81FA1D6F800BDADA3 /* LaunchScreen.storyboard */,
@@ -385,6 +390,7 @@
 				095FB0C41FAB119E00BC491B /* UIViewController+MMDrawerController.m in Sources */,
 				09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */,
 				09851FCD1FA1D6F800BDADA3 /* main.m in Sources */,
+				0953924F1FAC42D200DEC4DD /* PushViewController.m in Sources */,
 				09851FBF1FA1D6F800BDADA3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +557,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Linkage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -565,6 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Linkage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
