@@ -14,9 +14,7 @@
 #define ANIMATION_TIME 0.2  //菜单栏滚动的时间
 
 #define FULLVIEW_FOR6 667  //iPhone6(s)高度
-#define NAVIGATION_HEIGHT (kDevice_Is_iPhoneX ? 88:64) //navigationbar高度
-#define TABBAR_HEIGHT     (kDevice_Is_iPhoneX ? 83:49)  //tabbar高度
-#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)//判断是否为iPhoneX
+
 
 #define FUll_VIEW_WIDTH     ([[UIScreen mainScreen] bounds].size.width)
 #define FUll_VIEW_HEIGHT    ([[UIScreen mainScreen] bounds].size.height)

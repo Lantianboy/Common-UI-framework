@@ -16,8 +16,7 @@
 
 #define FUll_VIEW_WIDTH  ([[UIScreen mainScreen] bounds].size.width)
 #define FUll_VIEW_HEIGHT  ([[UIScreen mainScreen] bounds].size.height)
-#define NAVIGATION_HEIGHT 64  //navigationbar height
-#define TABBAR_HEIGHT 49  //tabbar height
+
 
 
 @interface ViewController ()
@@ -42,6 +41,7 @@
     [super viewDidLoad];
     
     self.title = @"首页" ;
+    self.navigationController.navigationBar.alpha = 0 ;
     
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftButtonPress)] ;
     [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES] ;

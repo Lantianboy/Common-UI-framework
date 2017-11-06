@@ -25,6 +25,11 @@
 		09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF11FA1D7CA00BDADA3 /* OneView.m */; };
 		09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */; };
 		098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098729911FA6FD0200AC2F2F /* LinkageMenuView.m */; };
+		0998E3231FB03A0C00B3C3DF /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3221FB03A0C00B3C3DF /* ViewController1.m */; };
+		0998E3261FB03A3800B3C3DF /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3251FB03A3800B3C3DF /* ViewController2.m */; };
+		0998E3291FB03A4100B3C3DF /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3281FB03A4100B3C3DF /* ViewController3.m */; };
+		0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E32D1FB0573000B3C3DF /* SYHeaderView.m */; };
+		0998E3321FB0676400B3C3DF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3311FB0676400B3C3DF /* UIView+Frame.m */; };
 		09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E1FA2F6B900A0BC23 /* TowView.m */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +100,17 @@
 		09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneCollectionViewCell.m; sourceTree = "<group>"; };
 		098729901FA6FD0200AC2F2F /* LinkageMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkageMenuView.h; sourceTree = "<group>"; };
 		098729911FA6FD0200AC2F2F /* LinkageMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkageMenuView.m; sourceTree = "<group>"; };
+		0998E3211FB03A0C00B3C3DF /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		0998E3221FB03A0C00B3C3DF /* ViewController1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		0998E3241FB03A3800B3C3DF /* ViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		0998E3251FB03A3800B3C3DF /* ViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		0998E3271FB03A4100B3C3DF /* ViewController3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		0998E3281FB03A4100B3C3DF /* ViewController3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		0998E32A1FB0556900B3C3DF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0998E32C1FB0573000B3C3DF /* SYHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYHeaderView.h; sourceTree = "<group>"; };
+		0998E32D1FB0573000B3C3DF /* SYHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYHeaderView.m; sourceTree = "<group>"; };
+		0998E3301FB0676400B3C3DF /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		0998E3311FB0676400B3C3DF /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		09DB475D1FA2F6B900A0BC23 /* TowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TowView.h; sourceTree = "<group>"; };
 		09DB475E1FA2F6B900A0BC23 /* TowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TowView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,17 +206,16 @@
 				0987298F1FA6FCA000AC2F2F /* Linkage */,
 				09851FBD1FA1D6F800BDADA3 /* AppDelegate.h */,
 				09851FBE1FA1D6F800BDADA3 /* AppDelegate.m */,
-				09851FC01FA1D6F800BDADA3 /* ViewController.h */,
-				09851FC11FA1D6F800BDADA3 /* ViewController.m */,
-				095FB0931FAB0E9E00BC491B /* LeftViewController.h */,
-				095FB0941FAB0E9E00BC491B /* LeftViewController.m */,
-				0953924D1FAC42D200DEC4DD /* PushViewController.h */,
-				0953924E1FAC42D200DEC4DD /* PushViewController.m */,
+				0998E3201FB0384E00B3C3DF /* TabbarController */,
+				0998E32F1FB066CE00B3C3DF /* Category */,
+				0998E31F1FB02EC600B3C3DF /* LeftController */,
+				0998E32B1FB056E400B3C3DF /* View */,
 				09851FC31FA1D6F800BDADA3 /* Main.storyboard */,
 				09851FC61FA1D6F800BDADA3 /* Assets.xcassets */,
 				09851FC81FA1D6F800BDADA3 /* LaunchScreen.storyboard */,
 				09851FCB1FA1D6F800BDADA3 /* Info.plist */,
 				09851FCC1FA1D6F800BDADA3 /* main.m */,
+				0998E32A1FB0556900B3C3DF /* PrefixHeader.pch */,
 			);
 			path = Linkage;
 			sourceTree = "<group>";
@@ -243,6 +258,50 @@
 				098729911FA6FD0200AC2F2F /* LinkageMenuView.m */,
 			);
 			path = Linkage;
+			sourceTree = "<group>";
+		};
+		0998E31F1FB02EC600B3C3DF /* LeftController */ = {
+			isa = PBXGroup;
+			children = (
+				095FB0931FAB0E9E00BC491B /* LeftViewController.h */,
+				095FB0941FAB0E9E00BC491B /* LeftViewController.m */,
+				0953924D1FAC42D200DEC4DD /* PushViewController.h */,
+				0953924E1FAC42D200DEC4DD /* PushViewController.m */,
+			);
+			path = LeftController;
+			sourceTree = "<group>";
+		};
+		0998E3201FB0384E00B3C3DF /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				09851FC01FA1D6F800BDADA3 /* ViewController.h */,
+				09851FC11FA1D6F800BDADA3 /* ViewController.m */,
+				0998E3211FB03A0C00B3C3DF /* ViewController1.h */,
+				0998E3221FB03A0C00B3C3DF /* ViewController1.m */,
+				0998E3241FB03A3800B3C3DF /* ViewController2.h */,
+				0998E3251FB03A3800B3C3DF /* ViewController2.m */,
+				0998E3271FB03A4100B3C3DF /* ViewController3.h */,
+				0998E3281FB03A4100B3C3DF /* ViewController3.m */,
+			);
+			path = TabbarController;
+			sourceTree = "<group>";
+		};
+		0998E32B1FB056E400B3C3DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0998E32C1FB0573000B3C3DF /* SYHeaderView.h */,
+				0998E32D1FB0573000B3C3DF /* SYHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0998E32F1FB066CE00B3C3DF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0998E3301FB0676400B3C3DF /* UIView+Frame.h */,
+				0998E3311FB0676400B3C3DF /* UIView+Frame.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,17 +438,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */,
+				0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */,
 				095FB0C31FAB119E00BC491B /* MMExampleDrawerVisualStateManager.m in Sources */,
 				095FB0951FAB0E9E00BC491B /* LeftViewController.m in Sources */,
 				095FB0C21FAB119E00BC491B /* MMDrawerVisualState.m in Sources */,
 				09851FC21FA1D6F800BDADA3 /* ViewController.m in Sources */,
+				0998E3231FB03A0C00B3C3DF /* ViewController1.m in Sources */,
 				09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */,
 				095FB0C01FAB119E00BC491B /* MMDrawerBarButtonItem.m in Sources */,
 				09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */,
+				0998E3321FB0676400B3C3DF /* UIView+Frame.m in Sources */,
 				095FB0C11FAB119E00BC491B /* MMDrawerController.m in Sources */,
+				0998E3291FB03A4100B3C3DF /* ViewController3.m in Sources */,
 				095FB0C41FAB119E00BC491B /* UIViewController+MMDrawerController.m in Sources */,
 				09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */,
 				09851FCD1FA1D6F800BDADA3 /* main.m in Sources */,
+				0998E3261FB03A3800B3C3DF /* ViewController2.m in Sources */,
 				0953924F1FAC42D200DEC4DD /* PushViewController.m in Sources */,
 				09851FBF1FA1D6F800BDADA3 /* AppDelegate.m in Sources */,
 			);
@@ -556,6 +620,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = YES;
+				GCC_PREFIX_HEADER = "/Users/zuiaishishenlan/Desktop/xcode9-/Linkage/Linkage/PrefixHeader.pch";
 				INFOPLIST_FILE = Linkage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -571,6 +636,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				ENABLE_BITCODE = YES;
+				GCC_PREFIX_HEADER = "/Users/zuiaishishenlan/Desktop/xcode9-/Linkage/Linkage/PrefixHeader.pch";
 				INFOPLIST_FILE = Linkage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
