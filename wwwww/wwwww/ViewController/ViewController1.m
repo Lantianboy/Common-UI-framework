@@ -10,10 +10,11 @@
 #import "TabbarVC.h"
 #import "ViewController.h"
 #import "ViewXib.h"
-#import "UIButton+btn.h"
+#import "TableViewDelegate.h"
 
-@interface ViewController1 ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController1 ()
 @property(nonatomic,strong) ViewXib * vix ;
+@property (nonatomic, strong) TableViewDelegate *delegateObject;
 
 @end
 
@@ -24,7 +25,23 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点我" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonItemClickde)] ;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点我" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemClicked)] ;
     self.view.backgroundColor = [UIColor redColor] ;
+    NSMutableArray * mut = [NSMutableArray arrayWithObjects:@"2",@"3",@"4",@"5",@"5",@"6", nil];
     
+    /**
+     下面只是简单的实现了将UITableView的点击事件传递出来，如果当前类和代理对象交互比较复杂和频繁，可以考虑用代理的形式来传递事件。
+     在代理和block的选取中，一定要记住：代理是面向过程的回调，block是面向结果的回调。
+     */
+    self.delegateObject = [TableViewDelegate createTableViewDelegateWithDataList:mut selectBlock:^(NSIndexPath * indexPath){
+        
+            ViewController * vi = [[ViewController alloc] init ];
+            vi.title = @"阳光明媚" ;
+            vi.view.backgroundColor = [UIColor greenColor] ;
+            [self.navigationController pushViewController:vi animated:YES];
+            
+            //vi.hidesBottomBarWhenPushed = YES ;
+            NSLog(@"点击了%ld",indexPath.section);
+        
+    }] ;
     
     //self.navigationItem.searchController =YES ;
     
@@ -36,13 +53,17 @@
 {
     UITableView * tab = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain] ;
     tab.backgroundColor = [UIColor whiteColor] ;
-    tab.delegate = self ;
-    tab.dataSource = self ;
+    tab.delegate = self.delegateObject ;
+    tab.dataSource = self.delegateObject ;
     //取消多余的cell
     tab.tableFooterView = self.vix ;
     //去掉tabcell下划线
     //tab.separatorStyle = UITableViewCellSeparatorStyleNone;
     tab.showsVerticalScrollIndicator = NO;
+    [tab reloadData] ;
+    
+    
+    
     // iOS11 fix
     if (@available(iOS 11.0, *)) {
         tab.estimatedRowHeight = 0;
@@ -51,49 +72,6 @@
     }
     [self.view addSubview:tab] ;
     
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 6 ;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1 ;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return section >= 4 ? 8 : 0 ;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString * str = @"one" ;
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:str] ;
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str] ;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone ;
-    cell.textLabel.text = indexPath.section % 2 ? @"你好！" : @"不好！" ;
-    //cell.backgroundColor = indexPath.section % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
-    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 10, 50, 30) borderColor:[UIColor redColor] borderWidth:2] ;
-    //btn.backgroundColor = [UIColor orangeColor] ;
-    //[btn setTitleColor:[UIColor redColor] forState:0] ;
-    
-    [btn setTitle:@"111" forState:UIControlStateNormal] ;
-    
-    [cell addSubview:btn] ;
-    
-    
-    return cell ;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ViewController * vi = [[ViewController alloc] init ];
-    vi.title = @"阳光明媚" ;
-    vi.view.backgroundColor = [UIColor greenColor] ;
-    //vi.hidesBottomBarWhenPushed = YES ;
-    NSLog(@"点击了%ld",indexPath.section) ;
-    [self.navigationController pushViewController:vi animated:YES] ;
 }
 
 - (ViewXib *)vix
@@ -105,7 +83,6 @@
     }
     return _vix ;
 }
-
 
 - (void)leftBarButtonItemClickde
 {
@@ -125,14 +102,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

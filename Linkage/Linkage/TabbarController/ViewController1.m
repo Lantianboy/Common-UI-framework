@@ -17,8 +17,6 @@
 @property(nonatomic, strong) UITableView * rightTableView ;
 @property(nonatomic, strong) NSMutableArray * rightDataArray ;
 
-@property(nonatomic, assign) BOOL isShowMultipleButton ;
-
 @property(nonatomic, strong) UITableView * rookieTableView ;
 @property(nonatomic, strong) NSMutableArray * rookieDataArray ;
 
@@ -70,9 +68,6 @@
     [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH*index, 0) animated:YES];
 }
 
-- (void)addNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeOptimizationWithIndex:) name:@"Notification_ChangeOptimizationType" object:nil];
-}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -81,11 +76,6 @@
     }
 }
 
-#pragma mark -NSNotification
-- (void)changeOptimizationWithIndex:(NSNotification *)notification{
-    NSString *index = [notification.userInfo objectForKey:@"INDEX"];
-    self.headerView.selectdIndex = [index integerValue]+1;
-}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

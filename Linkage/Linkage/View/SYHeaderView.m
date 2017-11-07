@@ -74,17 +74,11 @@
         view;
     });
     
-    
     [self addSubview:self.leftButton] ;
     [self addSubview:self.rightButton] ;
     [self addSubview:self.bottomLine] ;
     [self addSubview:self.rookieButton] ;
-    
-    
-
 }
-
-
 
 - (void)setSelectdIndex:(NSInteger)selectdIndex
 {
@@ -95,7 +89,6 @@
         {
             [self rookieButtonClick:self.rookieButton] ;
             break ;
-           
         }
         case 1:
         {
@@ -112,12 +105,10 @@
     }
 }
 
-
 - (void)rookieButtonClick:(UIButton *)button {
     if (button.isSelected) {
         return ;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NF_CLOSE_SHARE" object:nil] ;
     button.selected = YES ;
     self.rightButton.selected = NO ;
     self.leftButton.selected = NO ;
@@ -133,7 +124,6 @@
     if (button.isSelected) {
         return;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NF_CLOSE_SHARE" object:nil];
     button.selected = YES;
     self.leftButton.selected = NO;
     self.rookieButton.selected = NO;
@@ -149,7 +139,6 @@
     if (button.isSelected) {
         return;
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NF_CLOSE_SHARE" object:nil];
     button.selected= YES;
     self.rightButton.selected = NO;
     self.rookieButton.selected = NO;
@@ -160,6 +149,4 @@
         self.bottomLine.x = SCREEN_WIDTH*(1.00/COUNT);
     }];
 }
-        
-
 @end

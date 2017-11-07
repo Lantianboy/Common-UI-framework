@@ -51,7 +51,6 @@
 {
     NSString * ste= @"222" ;
     str = ste ;
-    NSLog(@"222") ;
     //self.titleLabel.text =str ;
     [self Hook_setTitle:str forState:sta] ;
     
