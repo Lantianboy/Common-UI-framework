@@ -24,6 +24,7 @@
 		09851FE21FA1D6F800BDADA3 /* LinkageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FE11FA1D6F800BDADA3 /* LinkageUITests.m */; };
 		09851FF21FA1D7CA00BDADA3 /* OneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF11FA1D7CA00BDADA3 /* OneView.m */; };
 		09851FF51FA1D7F200BDADA3 /* OneCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */; };
+		09855EFA1FB455390002C21F /* PBCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 09855EF91FB455390002C21F /* PBCollectionViewLayout.m */; };
 		098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 098729911FA6FD0200AC2F2F /* LinkageMenuView.m */; };
 		0998E3231FB03A0C00B3C3DF /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3221FB03A0C00B3C3DF /* ViewController1.m */; };
 		0998E3261FB03A3800B3C3DF /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3251FB03A3800B3C3DF /* ViewController2.m */; };
@@ -31,6 +32,7 @@
 		0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E32D1FB0573000B3C3DF /* SYHeaderView.m */; };
 		0998E3321FB0676400B3C3DF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3311FB0676400B3C3DF /* UIView+Frame.m */; };
 		09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E1FA2F6B900A0BC23 /* TowView.m */; };
+		EE086BA1F1C76B6174014658 /* libPods-Linkage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A653BB4E4137305F333768 /* libPods-Linkage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		09851FF11FA1D7CA00BDADA3 /* OneView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneView.m; sourceTree = "<group>"; };
 		09851FF31FA1D7F200BDADA3 /* OneCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneCollectionViewCell.h; sourceTree = "<group>"; };
 		09851FF41FA1D7F200BDADA3 /* OneCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneCollectionViewCell.m; sourceTree = "<group>"; };
+		09855EF81FB455390002C21F /* PBCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBCollectionViewLayout.h; sourceTree = "<group>"; };
+		09855EF91FB455390002C21F /* PBCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBCollectionViewLayout.m; sourceTree = "<group>"; };
 		098729901FA6FD0200AC2F2F /* LinkageMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkageMenuView.h; sourceTree = "<group>"; };
 		098729911FA6FD0200AC2F2F /* LinkageMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkageMenuView.m; sourceTree = "<group>"; };
 		0998E3211FB03A0C00B3C3DF /* ViewController1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
@@ -113,6 +117,9 @@
 		0998E3311FB0676400B3C3DF /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		09DB475D1FA2F6B900A0BC23 /* TowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TowView.h; sourceTree = "<group>"; };
 		09DB475E1FA2F6B900A0BC23 /* TowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TowView.m; sourceTree = "<group>"; };
+		49A653BB4E4137305F333768 /* libPods-Linkage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Linkage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		551E185FE6CBD23A3CE0C2BC /* Pods-Linkage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Linkage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Linkage/Pods-Linkage.debug.xcconfig"; sourceTree = "<group>"; };
+		5F2C75A6D120920407EC49A8 /* Pods-Linkage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Linkage.release.xcconfig"; path = "Pods/Target Support Files/Pods-Linkage/Pods-Linkage.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE086BA1F1C76B6174014658 /* libPods-Linkage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +192,8 @@
 				09851FD51FA1D6F800BDADA3 /* LinkageTests */,
 				09851FE01FA1D6F800BDADA3 /* LinkageUITests */,
 				09851FBB1FA1D6F800BDADA3 /* Products */,
+				C68845E4E2B565656D8BF43E /* Pods */,
+				1626B8B07BEF83ADFD60927E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +301,8 @@
 			children = (
 				0998E32C1FB0573000B3C3DF /* SYHeaderView.h */,
 				0998E32D1FB0573000B3C3DF /* SYHeaderView.m */,
+				09855EF81FB455390002C21F /* PBCollectionViewLayout.h */,
+				09855EF91FB455390002C21F /* PBCollectionViewLayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +316,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		1626B8B07BEF83ADFD60927E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49A653BB4E4137305F333768 /* libPods-Linkage.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C68845E4E2B565656D8BF43E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				551E185FE6CBD23A3CE0C2BC /* Pods-Linkage.debug.xcconfig */,
+				5F2C75A6D120920407EC49A8 /* Pods-Linkage.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -311,9 +340,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09851FE61FA1D6F800BDADA3 /* Build configuration list for PBXNativeTarget "Linkage" */;
 			buildPhases = (
+				ADAC71B9E1CEE011EF55AF33 /* [CP] Check Pods Manifest.lock */,
 				09851FB61FA1D6F800BDADA3 /* Sources */,
 				09851FB71FA1D6F800BDADA3 /* Frameworks */,
 				09851FB81FA1D6F800BDADA3 /* Resources */,
+				93E79BA09E985FCA08EC720F /* [CP] Embed Pods Frameworks */,
+				7EA9E86032BDC1922875E08E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -432,6 +464,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7EA9E86032BDC1922875E08E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Linkage/Pods-Linkage-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Linkage/Pods-Linkage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93E79BA09E985FCA08EC720F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Linkage/Pods-Linkage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADAC71B9E1CEE011EF55AF33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Linkage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09851FB61FA1D6F800BDADA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -439,6 +525,7 @@
 			files = (
 				098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */,
 				0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */,
+				09855EFA1FB455390002C21F /* PBCollectionViewLayout.m in Sources */,
 				095FB0C31FAB119E00BC491B /* MMExampleDrawerVisualStateManager.m in Sources */,
 				095FB0951FAB0E9E00BC491B /* LeftViewController.m in Sources */,
 				095FB0C21FAB119E00BC491B /* MMDrawerVisualState.m in Sources */,
@@ -616,6 +703,7 @@
 		};
 		09851FE71FA1D6F800BDADA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 551E185FE6CBD23A3CE0C2BC /* Pods-Linkage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -632,6 +720,7 @@
 		};
 		09851FE81FA1D6F800BDADA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F2C75A6D120920407EC49A8 /* Pods-Linkage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

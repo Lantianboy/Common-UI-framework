@@ -8,6 +8,9 @@
 
 #import "ViewController1.h"
 #import "SYHeaderView.h"
+#import "PushViewController.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
 @interface ViewController1 ()<UITableViewDelegate,UITableViewDataSource,SYHeaderViewDelgate,UIScrollViewDelegate>
 
 @property(nonatomic, strong) SYHeaderView * headerView ;
@@ -23,6 +26,14 @@
 @end
 
 @implementation ViewController1
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    //设置关闭抽屉模式
+    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone] ;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,7 +89,7 @@
 
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {  
    
     
     if (tableView == self.leftTableView) {
@@ -119,6 +130,7 @@
     
     
 }
+
 static NSString *const leftCellId = @"leftCellId";
 - (UITableView *)leftTableView {
     if (!_leftTableView) {

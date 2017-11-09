@@ -9,6 +9,7 @@
 #import "LeftViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "PushViewController.h"
+
 @interface LeftViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)NSMutableArray * array ;
@@ -73,12 +74,17 @@
     
     PushViewController * pushVc = [[PushViewController alloc] init] ;
     pushVc.titleString = [tableView cellForRowAtIndexPath:indexPath].textLabel.text ;
+    //MMDrawerController * mm = [[MMDrawerController alloc] init] ;
     
-    //拿到我们的LitterLCenterViewController， 让他去push
-    UINavigationController * nav = (UINavigationController *)self.mm_drawerController.centerViewController ;
+    UITabBarController * tab = (UITabBarController *)self.mm_drawerController.centerViewController ;
+    //拿到当前tab
+    UINavigationController *nav = (UINavigationController *)tab.viewControllers[tab.selectedIndex];
+    pushVc.hidesBottomBarWhenPushed = YES ;
     [nav pushViewController:pushVc animated:NO] ;
     
-    //当我们push成功后 关闭我们的抽屉
+    
+    
+    //当push成功后 关闭的抽屉
     [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished){
         //设置打开抽屉模式为MMOpenDrawerGestureModeNone，也就是没有任何效果
         [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone] ;
@@ -116,7 +122,7 @@
     PushViewController *pushVC = [[PushViewController alloc] init];
     pushVC.titleString = @"个人资料";
     
-    //拿到我们的LitterLCenterViewController，让它去push
+    
     UINavigationController* nav = (UINavigationController*)self.mm_drawerController.centerViewController;
     [nav pushViewController:pushVC animated:NO];
     //当我们push成功之后，关闭我们的抽屉

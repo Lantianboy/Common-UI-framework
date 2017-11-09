@@ -7,12 +7,24 @@
 //
 
 #import "ViewController2.h"
+#import "MMDrawerBarButtonItem.h"
+#import "UIViewController+MMDrawerController.h"
+#import <MJExtension.h>
+#import <MJRefresh.h>
 
 @interface ViewController2 ()
 
 @end
 
 @implementation ViewController2
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+    //设置关闭抽屉模式
+    [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone] ;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

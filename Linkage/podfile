@@ -1,0 +1,6 @@
+platform :ios, "8.0"
+target 'Linkage'do
+pod "MJExtension"
+pod "MJRefresh"
+pod "SDWebImage"
+end

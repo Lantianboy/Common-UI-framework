@@ -66,6 +66,7 @@
     tbb.barStyle=UIBarStyleDefault;
     tbb.translucent=YES;
     tbb.layer.borderWidth=0.1;
+    //tab.selectedIndex = self.selectedIndex ;
     //边框颜色深度
     
     tbb.barTintColor=[UIColor whiteColor];
@@ -109,6 +110,7 @@
     // Override point for customization after application launch.
     return YES;
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

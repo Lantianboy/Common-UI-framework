@@ -8,6 +8,7 @@
 
 #import "OneView.h"
 #import "OneCollectionViewCell.h"
+#import "PushViewController.h"
 @interface OneView()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong) UICollectionView * collectionView ;
 
@@ -71,8 +72,10 @@
     return cell ;
 }
 
-
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    NSLog(@"点击了%ldItem",indexPath.row) ;
+}
 
 
 
