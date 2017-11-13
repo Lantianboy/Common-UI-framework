@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class PBCollectionViewLayout ;
 
-@protocol JKRFallsLayoutDelegate <NSObject>
+@protocol PBFallsLayoutDelegate <NSObject>
 
 /// 列数
 - (CGFloat)columnCountInFallsLayout:(PBCollectionViewLayout *)fallsLayout;
@@ -24,6 +24,6 @@
 @end
 
 @interface PBCollectionViewLayout : UICollectionViewLayout
-@property (nonatomic, weak) id<JKRFallsLayoutDelegate> delegate;
+@property (nonatomic, weak) id<PBFallsLayoutDelegate> delegate;
 
 @end

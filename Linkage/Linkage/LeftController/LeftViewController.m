@@ -109,7 +109,7 @@
     [imageBtn addTarget:self action:@selector(imageBtn) forControlEvents:UIControlEventTouchUpInside] ;
     
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(imageBtn.frame)+5, tableView.bounds.size.width, 20)];
-    nameLabel.text = @"ZWS-China";
+    nameLabel.text = @"ZWJ-China";
     nameLabel.textColor = [UIColor whiteColor];
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [view addSubview:nameLabel];
@@ -121,9 +121,11 @@
     
     PushViewController *pushVC = [[PushViewController alloc] init];
     pushVC.titleString = @"个人资料";
+    UITabBarController * tab = (UITabBarController *)self.mm_drawerController.centerViewController ;
+    //拿到当前tab
+    UINavigationController *nav = (UINavigationController *)tab.viewControllers[tab.selectedIndex];
+    pushVC.hidesBottomBarWhenPushed = YES ;
     
-    
-    UINavigationController* nav = (UINavigationController*)self.mm_drawerController.centerViewController;
     [nav pushViewController:pushVC animated:NO];
     //当我们push成功之后，关闭我们的抽屉
     [self.mm_drawerController closeDrawerAnimated:YES completion:^(BOOL finished) {

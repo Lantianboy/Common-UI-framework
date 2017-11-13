@@ -35,7 +35,7 @@
     
     self.rookieButton = ({
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom] ;
-        [button setTitle:@"新手专区" forState:0] ;
+        [button setTitle:@"一块钱" forState:0] ;
         [button setTitleColor:UIColorFromRGB(0x666666) forState:UIControlStateNormal] ;
         [button setTitleColor:UIColorFromRGB(0xff5400) forState:UIControlStateSelected] ;
         button.titleLabel.font = [UIFont systemFontOfSize:15] ;
@@ -48,7 +48,7 @@
     
     self.leftButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"优选项目" forState:UIControlStateNormal];
+        [button setTitle:@"五块钱" forState:UIControlStateNormal];
         [button setTitleColor:UIColorFromRGB(0x666666) forState:UIControlStateNormal];
         [button setTitleColor:UIColorFromRGB(0xff5400) forState:UIControlStateSelected];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -59,7 +59,7 @@
     
     self.rightButton = ({
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"转让专区" forState:UIControlStateNormal];
+        [button setTitle:@"十块钱" forState:UIControlStateNormal];
         [button setTitleColor:UIColorFromRGB(0x666666) forState:UIControlStateNormal];
         [button setTitleColor:UIColorFromRGB(0xff5400) forState:UIControlStateSelected];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
