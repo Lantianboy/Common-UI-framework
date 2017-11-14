@@ -10,7 +10,7 @@
 @class PBCollectionViewLayout ;
 
 @protocol PBFallsLayoutDelegate <NSObject>
-
+@optional
 /// 列数
 - (CGFloat)columnCountInFallsLayout:(PBCollectionViewLayout *)fallsLayout;
 /// 列间距

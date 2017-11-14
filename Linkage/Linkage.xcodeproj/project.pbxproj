@@ -58,6 +58,7 @@
 /* Begin PBXFileReference section */
 		0953924D1FAC42D200DEC4DD /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
 		0953924E1FAC42D200DEC4DD /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		095A350E1FBAC07500378203 /* pb1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pb1.plist; sourceTree = "<group>"; };
 		095FB0931FAB0E9E00BC491B /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		095FB0941FAB0E9E00BC491B /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		095FB0A81FAB114900BC491B /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		095FB0BD1FAB119D00BC491B /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
 		095FB0BE1FAB119D00BC491B /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		095FB0BF1FAB119D00BC491B /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		09784B721FB553930023E165 /* 1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
 		097F4A461FB97EF8003260CE /* PBShop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBShop.h; sourceTree = "<group>"; };
 		097F4A471FB97EF8003260CE /* PBShop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBShop.m; sourceTree = "<group>"; };
 		097F4A491FB9801D003260CE /* PBShopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBShopCell.h; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 				0998E32B1FB056E400B3C3DF /* View */,
 				09851FC31FA1D6F800BDADA3 /* Main.storyboard */,
 				097F4A4E1FB9983C003260CE /* 杨5.jpeg */,
-				09784B721FB553930023E165 /* 1.plist */,
 				09851FC61FA1D6F800BDADA3 /* Assets.xcassets */,
 				09851FC81FA1D6F800BDADA3 /* LaunchScreen.storyboard */,
 				09851FCB1FA1D6F800BDADA3 /* Info.plist */,
@@ -320,6 +319,7 @@
 				097F4A491FB9801D003260CE /* PBShopCell.h */,
 				097F4A4A1FB9801D003260CE /* PBShopCell.m */,
 				097F4A4C1FB98463003260CE /* PBShopCell.xib */,
+				095A350E1FBAC07500378203 /* pb1.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -727,6 +727,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 877WMW87R7;
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "/Users/zuiaishishenlan/Desktop/xcode9-/Linkage/Linkage/PrefixHeader.pch";
 				INFOPLIST_FILE = Linkage/Info.plist;
@@ -744,6 +745,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 877WMW87R7;
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "/Users/zuiaishishenlan/Desktop/xcode9-/Linkage/Linkage/PrefixHeader.pch";
 				INFOPLIST_FILE = Linkage/Info.plist;

@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes *> *attrsArray; ///< 所有的cell的布局
 @property (nonatomic, strong) NSMutableArray *columnHeights;                                  ///< 每一列的高度
-@property (nonatomic, assign) NSInteger noneDoubleTime;                                       ///< 没有生成大尺寸次数
+//@property (nonatomic, assign) NSInteger noneDoubleTime;                                       ///< 没有生成大尺寸次数
 @property (nonatomic, assign) NSInteger lastDoubleIndex;                                      ///< 最后一次大尺寸的列数
 @property (nonatomic, assign) NSInteger lastFixIndex;                                         ///< 最后一次对齐矫正列数
 
@@ -60,6 +60,7 @@ static const UIEdgeInsets PBDefaultUIEdgeInsets = {10, 10, 10, 10};      ///< �
     }
 }
 
+// 返回布局属性，一个UICollectionViewLayoutAttributes对象数组
 - (NSArray<UICollectionViewLayoutAttributes *>*)layoutAttributesForElementsInRect:(CGRect)rect
 {
     return self.attrsArray ;
@@ -81,7 +82,7 @@ static const UIEdgeInsets PBDefaultUIEdgeInsets = {10, 10, 10, 10};      ///< �
     
     //cell的高度
     NSUInteger randomOfHeight = arc4random() % 100 ;
-    CGFloat h = w * (randomOfHeight >= 50 ? 250 : 320 / 200) ;
+    CGFloat h = w * (randomOfHeight >= 50 ? 250 : 320) / 200 ;
     
     //cell应该拼接的列数
     NSInteger destColumn = 0 ;
@@ -125,10 +126,11 @@ static const UIEdgeInsets PBDefaultUIEdgeInsets = {10, 10, 10, 10};      ///< �
 //        self.columnHeights[destColumn + 1] = @(CGRectGetMaxY(attrs.frame));
 //    } else {
     //正常的cell的布局
-    if (_noneDoubleTime <= 3 || _lastFixIndex == destColumn) {
-        //如果没有放大次数小于3且当前列等于上次矫正的列，就不矫正
-        attrs.frame = CGRectMake(x, y, w, h) ;
-    }else if (self.columnHeights.count > destColumn + 1
+//    if (_noneDoubleTime <= 3 || _lastFixIndex == destColumn) {
+//        //如果没有放大次数小于3且当前列等于上次矫正的列，就不矫正
+//        attrs.frame = CGRectMake(x, y, w, h) ;
+    //} else
+     if (self.columnHeights.count > destColumn + 1
         //越界判断
         && y + h - [self.columnHeights[destColumn + 1] doubleValue] < w * 0.1) {// 当前cell填充后和上一列的高度偏差不超过cell最大高度的10%，就和下一列对齐
         attrs.frame = CGRectMake(x, y, w, [self.columnHeights[destColumn + 1] doubleValue] - y) ;
@@ -145,7 +147,7 @@ static const UIEdgeInsets PBDefaultUIEdgeInsets = {10, 10, 10, 10};      ///< �
                    }
     //当前cell列的高度就是当前cell的最大y值
     self.columnHeights[destColumn] = @(CGRectGetMaxY(attrs.frame)) ;
-    _noneDoubleTime += 1 ;
+    //_noneDoubleTime += 1 ;
   
     //返回计算获取的布局
     return attrs ;

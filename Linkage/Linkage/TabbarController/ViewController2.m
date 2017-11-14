@@ -52,7 +52,6 @@ static NSString *const ID = @"shop";
     UICollectionView * collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:fallsLayout] ;
     [self.view addSubview:collectionView] ;
     _collectionView = collectionView ;
-    self.collectionView.backgroundColor = [UIColor redColor] ;
     collectionView.dataSource = self ;
     [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PBShopCell class]) bundle:nil] forCellWithReuseIdentifier:ID] ;
     
@@ -61,8 +60,8 @@ static NSString *const ID = @"shop";
 #pragma mark - 创建上下拉刷新
 - (void)setupRefresh
 {
-    self.collectionView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)] ;
-    self.collectionView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)] ;
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewShops)] ;
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreShops)] ;
     self.collectionView.backgroundColor = [UIColor whiteColor] ;
     [self.collectionView.mj_header beginRefreshing] ;
 }
@@ -72,7 +71,7 @@ static NSString *const ID = @"shop";
 {
     __weak typeof (self) weakSelf = self ;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSArray * shops = [PBShop mj_objectArrayWithFilename:@"1.plist"] ;
+        NSArray * shops = [PBShop mj_objectArrayWithFilename:@"pb1.plist"] ;
         [weakSelf.shops removeAllObjects] ;
         NSLog(@"下拉了") ;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -82,14 +81,15 @@ static NSString *const ID = @"shop";
             [weakSelf.collectionView reloadData] ;
         }) ;
     }) ;
+    
 }
 
-#pragma mark - 加载下拉数据
+#pragma mark - 加载上拉数据
 - (void)loadMoreShops
 {
     __weak typeof (self) weakSelf = self ;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSArray * shops = [PBShop mj_objectArrayWithFilename:@"1.plist"] ;
+        NSArray * shops = [PBShop mj_objectArrayWithFilename:@"pb1.plist"] ;
         NSLog(@"上拉了") ;
         [weakSelf.shops addObjectsFromArray:shops] ;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -107,13 +107,15 @@ static NSString *const ID = @"shop";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     self.collectionView.mj_footer.hidden = self.shops.count == 0 ;
-    return self.shops.count ;
+    return self.shops.count ? self.shops.count : 25;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     PBShopCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath] ;
-    if (self.shops && self.shops.count >= indexPath.item + 1) cell.shop = self.shops[indexPath.item] ;
+    if (self.shops && self.shops.count >= indexPath.item + 1)cell.shop = self.shops[indexPath.item] ;
+    
+    cell.backgroundColor = [UIColor greenColor] ;
     
     return cell ;
 }
