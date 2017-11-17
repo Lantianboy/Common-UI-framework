@@ -15,8 +15,12 @@
 #import "LeftViewController.h"
 #import "MMDrawerVisualState.h"
 #import "MMExampleDrawerVisualStateManager.h"
+#import <UMSocialCore/UMSocialCore.h>
+
+
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define APPKEY @"5a0d3a11f29d9827ea0000a8"
 @interface AppDelegate ()
 @property (nonatomic,strong)MMDrawerController * drawerController ;
 @end
@@ -104,14 +108,36 @@
     
     
     
+    /* 打开调试日志 */
+    [[UMSocialManager defaultManager] openLog:YES];
     
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:APPKEY];
+    
+    [self configUSharePlatforms];
+    
+    [self confitUShareSettings];
     
     
     // Override point for customization after application launch.
     return YES;
 }
 
+- (void)configUSharePlatforms
+{
+    //微信分享
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:nil];
+}
 
+- (void)confitUShareSettings
+{
+    /*
+     * 打开图片水印
+     */
+    [UMSocialGlobal shareInstance].isUsingWaterMark = YES;
+    
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

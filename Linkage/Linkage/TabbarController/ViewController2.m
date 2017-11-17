@@ -69,9 +69,25 @@ static NSString *const ID = @"shop";
 #pragma  mark - 加载下拉数据
 - (void)loadNewShops
 {
+    
+    NSString *home = NSHomeDirectory();
+    
+    // 2.document路径
+    NSString *docPath = [home stringByAppendingPathComponent:@"Documents"];
+    
+    // 3.文件路径
+    NSString *filepath = [docPath stringByAppendingPathComponent:@"1.plist"];
+    
+    // 4.读取数据  不明白为什么读取不出来数据
+    NSArray *are = [NSArray arrayWithContentsOfFile:filepath];
+    
+//    NSDictionary * dic=[[NSMutableDictionary alloc]initWithContentsOfFile:filepath ];
     __weak typeof (self) weakSelf = self ;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSArray * shops = [PBShop mj_objectArrayWithFilename:@"pb1.plist"] ;
+        
+   
+        
+        NSArray * shops = [PBShop mj_keyValuesArrayWithObjectArray:are] ;
         [weakSelf.shops removeAllObjects] ;
         NSLog(@"下拉了") ;
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -113,7 +129,11 @@ static NSString *const ID = @"shop";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
     PBShopCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath] ;
-    if (self.shops && self.shops.count >= indexPath.item + 1)cell.shop = self.shops[indexPath.item] ;
+    if (self.shops && self.shops.count >= indexPath.item + 1) {
+        cell.shop = self.shops[indexPath.item] ;
+    }
+    
+    
     
     cell.backgroundColor = [UIColor greenColor] ;
     

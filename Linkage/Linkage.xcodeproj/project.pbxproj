@@ -34,6 +34,11 @@
 		0998E3291FB03A4100B3C3DF /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3281FB03A4100B3C3DF /* ViewController3.m */; };
 		0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E32D1FB0573000B3C3DF /* SYHeaderView.m */; };
 		0998E3321FB0676400B3C3DF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3311FB0676400B3C3DF /* UIView+Frame.m */; };
+		09D55EFD1FBD72BF00DC5B6C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55EFC1FBD72BF00DC5B6C /* libsqlite3.tbd */; };
+		09D55EFF1FBD72C900DC5B6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55EFE1FBD72C900DC5B6C /* CoreGraphics.framework */; };
+		09D55F011FBD731E00DC5B6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55F001FBD731E00DC5B6C /* SystemConfiguration.framework */; };
+		09D55F031FBD733400DC5B6C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55F021FBD733400DC5B6C /* libc++.tbd */; };
+		09D55F051FBD733F00DC5B6C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55F041FBD733F00DC5B6C /* libz.tbd */; };
 		09DB475F1FA2F6B900A0BC23 /* TowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DB475E1FA2F6B900A0BC23 /* TowView.m */; };
 		EE086BA1F1C76B6174014658 /* libPods-Linkage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A653BB4E4137305F333768 /* libPods-Linkage.a */; };
 /* End PBXBuildFile section */
@@ -58,7 +63,6 @@
 /* Begin PBXFileReference section */
 		0953924D1FAC42D200DEC4DD /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
 		0953924E1FAC42D200DEC4DD /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
-		095A350E1FBAC07500378203 /* pb1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pb1.plist; sourceTree = "<group>"; };
 		095FB0931FAB0E9E00BC491B /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		095FB0941FAB0E9E00BC491B /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		095FB0A81FAB114900BC491B /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
@@ -125,6 +129,12 @@
 		0998E32D1FB0573000B3C3DF /* SYHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYHeaderView.m; sourceTree = "<group>"; };
 		0998E3301FB0676400B3C3DF /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		0998E3311FB0676400B3C3DF /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		09A316EC1FBEC11D007319F4 /* 1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		09D55EFC1FBD72BF00DC5B6C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		09D55EFE1FBD72C900DC5B6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		09D55F001FBD731E00DC5B6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		09D55F021FBD733400DC5B6C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		09D55F041FBD733F00DC5B6C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		09DB475D1FA2F6B900A0BC23 /* TowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TowView.h; sourceTree = "<group>"; };
 		09DB475E1FA2F6B900A0BC23 /* TowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TowView.m; sourceTree = "<group>"; };
 		49A653BB4E4137305F333768 /* libPods-Linkage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Linkage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +147,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D55F051FBD733F00DC5B6C /* libz.tbd in Frameworks */,
+				09D55F031FBD733400DC5B6C /* libc++.tbd in Frameworks */,
+				09D55F011FBD731E00DC5B6C /* SystemConfiguration.framework in Frameworks */,
+				09D55EFF1FBD72C900DC5B6C /* CoreGraphics.framework in Frameworks */,
+				09D55EFD1FBD72BF00DC5B6C /* libsqlite3.tbd in Frameworks */,
 				EE086BA1F1C76B6174014658 /* libPods-Linkage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +238,6 @@
 				095FB0A71FAB114900BC491B /* MMDrawerController */,
 				095FB0B41FAB119D00BC491B /* MMDrawerController */,
 				09851FEF1FA1D7AA00BDADA3 /* rightView */,
-				0987298F1FA6FCA000AC2F2F /* Linkage */,
 				09851FBD1FA1D6F800BDADA3 /* AppDelegate.h */,
 				09851FBE1FA1D6F800BDADA3 /* AppDelegate.m */,
 				0998E3201FB0384E00B3C3DF /* TabbarController */,
@@ -303,6 +317,7 @@
 				0998E3251FB03A3800B3C3DF /* ViewController2.m */,
 				0998E3271FB03A4100B3C3DF /* ViewController3.h */,
 				0998E3281FB03A4100B3C3DF /* ViewController3.m */,
+				09A316EC1FBEC11D007319F4 /* 1.plist */,
 			);
 			path = TabbarController;
 			sourceTree = "<group>";
@@ -310,6 +325,7 @@
 		0998E32B1FB056E400B3C3DF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0987298F1FA6FCA000AC2F2F /* Linkage */,
 				0998E32C1FB0573000B3C3DF /* SYHeaderView.h */,
 				0998E32D1FB0573000B3C3DF /* SYHeaderView.m */,
 				09855EF81FB455390002C21F /* PBCollectionViewLayout.h */,
@@ -319,7 +335,6 @@
 				097F4A491FB9801D003260CE /* PBShopCell.h */,
 				097F4A4A1FB9801D003260CE /* PBShopCell.m */,
 				097F4A4C1FB98463003260CE /* PBShopCell.xib */,
-				095A350E1FBAC07500378203 /* pb1.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +351,11 @@
 		1626B8B07BEF83ADFD60927E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09D55F041FBD733F00DC5B6C /* libz.tbd */,
+				09D55F021FBD733400DC5B6C /* libc++.tbd */,
+				09D55F001FBD731E00DC5B6C /* SystemConfiguration.framework */,
+				09D55EFE1FBD72C900DC5B6C /* CoreGraphics.framework */,
+				09D55EFC1FBD72BF00DC5B6C /* libsqlite3.tbd */,
 				49A653BB4E4137305F333768 /* libPods-Linkage.a */,
 			);
 			name = Frameworks;
@@ -491,6 +511,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Linkage/Pods-Linkage-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -731,7 +754,7 @@
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "/Users/zuiaishishenlan/Desktop/xcode9-/Linkage/Linkage/PrefixHeader.pch";
 				INFOPLIST_FILE = Linkage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -749,7 +772,7 @@
 				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "/Users/zuiaishishenlan/Desktop/xcode9-/Linkage/Linkage/PrefixHeader.pch";
 				INFOPLIST_FILE = Linkage/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,6 +9,8 @@
 #import "ViewController3.h"
 #import "MMDrawerBarButtonItem.h"
 #import "UIViewController+MMDrawerController.h"
+#import <UMSocialCore/UMSocialCore.h>
+#import <SVProgressHUD.h>
 @interface ViewController3 ()
 
 @end
@@ -25,10 +27,59 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor] ;
+    self.view.backgroundColor = [UIColor whiteColor] ;
     self.navigationController.navigationBar.alpha = 1 ;
     // Do any additional setup after loading the view.
+    
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(35, 100, 100, 100)] ;
+    btn.backgroundColor = [UIColor orangeColor] ;
+    [btn setTitle:@"微信分享" forState:UIControlStateNormal] ;
+    [btn addTarget:self action:@selector(fenxiang) forControlEvents:UIControlEventTouchUpInside] ;
+    [self.view addSubview:btn] ;
+    
+    UIButton * btn1 = [[UIButton alloc]initWithFrame:CGRectMake(250, 100, 100, 100)] ;
+    btn1.backgroundColor = [UIColor orangeColor] ;
+    [btn1 setTitle:@"短信分享" forState:UIControlStateNormal] ;
+    [btn1 addTarget:self action:@selector(fenxiang1) forControlEvents:UIControlEventTouchUpInside] ;
+    [self.view addSubview:btn1] ;
+    
 }
+
+- (void)fenxiang
+{
+    __weak typeof(self) weakSelf = self;
+    [weakSelf share:UMSocialPlatformType_WechatSession withText:@"你好啊"];
+}
+
+- (void)fenxiang1
+{
+    __weak typeof(self) weakSelf = self;
+    [weakSelf share:UMSocialPlatformType_Sms withText:@"sjdjsid"];
+}
+
+
+-(void)share:(UMSocialPlatformType)type  withText:(NSString*)string
+{
+    UMSocialMessageObject *object = [UMSocialMessageObject messageObject];
+    
+    object.text = string;
+    
+    [[UMSocialManager defaultManager] shareToPlatform:type messageObject:object currentViewController:self completion:^(id result, NSError *error) {
+        if (error) {
+            
+            [SVProgressHUD showErrorWithStatus:@"分享失败"];
+            NSLog(@"%@",error);
+        }
+        else
+        {
+            [SVProgressHUD showErrorWithStatus:@"分享成功"];
+            NSLog(@"%@",result);
+        }
+        
+    }];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
