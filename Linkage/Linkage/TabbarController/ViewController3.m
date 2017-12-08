@@ -11,7 +11,10 @@
 #import "UIViewController+MMDrawerController.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import <SVProgressHUD.h>
-@interface ViewController3 ()
+#import "SheetView.h"
+@interface ViewController3 ()<SheetViewDelgate>
+
+@property (nonatomic, strong) SheetView * sheet ;
 
 @end
 
@@ -29,44 +32,127 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor] ;
     self.navigationController.navigationBar.alpha = 1 ;
-    // Do any additional setup after loading the view.
+    //[self.view addSubview:self.sheetView] ;
     
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(35, 100, 100, 100)] ;
+    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 200, 100, 50)] ;
     btn.backgroundColor = [UIColor orangeColor] ;
-    [btn setTitle:@"微信分享" forState:UIControlStateNormal] ;
-    [btn addTarget:self action:@selector(fenxiang) forControlEvents:UIControlEventTouchUpInside] ;
+    [btn setTitle:@"点击分享" forState:UIControlStateNormal] ;
+    [btn addTarget:self action:@selector(sheet2) forControlEvents:UIControlEventTouchUpInside] ;
+    btn.layer.cornerRadius = 8.72 ;
     [self.view addSubview:btn] ;
     
-    UIButton * btn1 = [[UIButton alloc]initWithFrame:CGRectMake(250, 100, 100, 100)] ;
+    
+    UIButton * btn1 = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 400, 100, 50)] ;
     btn1.backgroundColor = [UIColor orangeColor] ;
-    [btn1 setTitle:@"短信分享" forState:UIControlStateNormal] ;
-    [btn1 addTarget:self action:@selector(fenxiang1) forControlEvents:UIControlEventTouchUpInside] ;
+    [btn1 setTitle:@"点击分享" forState:UIControlStateNormal] ;
+    [btn1 addTarget:self action:@selector(sheet1) forControlEvents:UIControlEventTouchUpInside] ;
+    btn1.layer.cornerRadius = 8.72 ;
     [self.view addSubview:btn1] ;
+
     
 }
 
-- (void)fenxiang
+- (void)sheet1
 {
-    __weak typeof(self) weakSelf = self;
-    [weakSelf share:UMSocialPlatformType_WechatSession withText:@"你好啊"];
+    [self.sheet showWithController:self] ;
 }
 
-- (void)fenxiang1
+- (SheetView *)sheet
 {
-    __weak typeof(self) weakSelf = self;
-    [weakSelf share:UMSocialPlatformType_Sms withText:@"sjdjsid"];
+    if (!_sheet) {
+        _sheet = [[SheetView alloc] initWithTitle:@"分享" message:@"请选择分享方式"] ;
+        
+        _sheet.sheetDelgate = self ;
+        _sheet.actionTitles = @[@"微信",@"短信",@"取消"] ;
+    }
+    return _sheet ;
 }
+
+- (UIAlertActionStyle)sheetView:(SheetView *)sheetView actionStyleAtIndex:(NSInteger)index
+{
+    if (index == 0) {
+        return UIAlertActionStyleDestructive ;
+    }else if (index == sheetView.actionTitles.count - 1){
+        return UIAlertActionStyleCancel ;
+    }
+    return UIAlertActionStyleDefault ;
+}
+
+- (void)sheetView:(SheetView *)sheetView didSelectedAtIndex:(NSInteger)index
+{
+    if (index == 0) {
+        NSLog(@"微信") ;
+    }
+    if (index == 1) {
+        NSLog(@"短信") ;
+    }
+    if (index == 2) {
+        NSLog(@"取消") ;
+    }
+}
+
+- (void)sheet2
+{
+    //直接创建sheetView
+//    UIActionSheet * actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择分享方式" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"微信分享" otherButtonTitles:@"短信分享", nil] ;
+//    actionSheet.actionSheetStyle = UIActionSheetStyleDefault ;
+//    [actionSheet showInView:self.view] ;
+    
+    //创建AlertController对象 preferredStly可以设置AlertView的样式或者ActionSheet样式
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"分享" message:@"选择分享方式" preferredStyle:UIAlertControllerStyleActionSheet] ;
+    
+    //创建取消按钮 UIAlertActionStyleCancel取消样式
+    UIAlertAction * sheet1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击了取消") ;
+    }] ;
+    
+    UIAlertAction * sheet2 = [UIAlertAction actionWithTitle:@"微信" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"微信") ;
+        __weak typeof(self) weakSelf = self;
+        [weakSelf share:UMSocialPlatformType_WechatSession withText:@"你好啊"];
+        
+    }] ;
+    
+    UIAlertAction * sheet3 = [UIAlertAction actionWithTitle:@"短信" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"短信") ;
+        __weak typeof(self) weakSelf = self;
+        [weakSelf share:UMSocialPlatformType_Sms withText:@"sjdjsid"];
+    }] ;
+    
+    //添加按钮
+    [alert addAction:sheet1] ;
+    [alert addAction:sheet2] ;
+    [alert addAction:sheet3] ;
+    //显示
+    [self presentViewController:alert animated:YES completion:nil] ;
+  
+    
+}
+
+//sheetView的代理方法
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+//{
+//    if (buttonIndex == 0) {
+//        NSLog(@"点击了%ld",buttonIndex) ;
+//        __weak typeof(self) weakSelf = self;
+//        [weakSelf share:UMSocialPlatformType_WechatSession withText:@"你好啊"];
+//    }else if (buttonIndex == 1){
+//        NSLog(@"点击了%ld",buttonIndex) ;
+//        __weak typeof(self) weakSelf = self;
+//        [weakSelf share:UMSocialPlatformType_Sms withText:@"sjdjsid"];
+//    }
+//}
 
 
 -(void)share:(UMSocialPlatformType)type  withText:(NSString*)string
 {
     UMSocialMessageObject *object = [UMSocialMessageObject messageObject];
-    
+
     object.text = string;
-    
+
     [[UMSocialManager defaultManager] shareToPlatform:type messageObject:object currentViewController:self completion:^(id result, NSError *error) {
         if (error) {
-            
+
             [SVProgressHUD showErrorWithStatus:@"分享失败"];
             NSLog(@"%@",error);
         }
@@ -75,25 +161,12 @@
             [SVProgressHUD showErrorWithStatus:@"分享成功"];
             NSLog(@"%@",result);
         }
-        
+
     }];
 }
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
