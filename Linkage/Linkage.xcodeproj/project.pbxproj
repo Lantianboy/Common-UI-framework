@@ -94,7 +94,6 @@
 		097F4A491FB9801D003260CE /* PBShopCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBShopCell.h; sourceTree = "<group>"; };
 		097F4A4A1FB9801D003260CE /* PBShopCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBShopCell.m; sourceTree = "<group>"; };
 		097F4A4C1FB98463003260CE /* PBShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PBShopCell.xib; sourceTree = "<group>"; };
-		097F4A4E1FB9983C003260CE /* 杨5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "杨5.jpeg"; sourceTree = "<group>"; };
 		09851FBA1FA1D6F800BDADA3 /* Linkage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09851FBD1FA1D6F800BDADA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09851FBE1FA1D6F800BDADA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		0998E3301FB0676400B3C3DF /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		0998E3311FB0676400B3C3DF /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		09A316EC1FBEC11D007319F4 /* 1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		09B22D711FDE73D700F7FC1D /* yangzixi.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yangzixi.JPG; sourceTree = "<group>"; };
 		09D55EFC1FBD72BF00DC5B6C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		09D55EFE1FBD72C900DC5B6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		09D55F001FBD731E00DC5B6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -248,7 +248,7 @@
 				0998E31F1FB02EC600B3C3DF /* LeftController */,
 				0998E32B1FB056E400B3C3DF /* View */,
 				09851FC31FA1D6F800BDADA3 /* Main.storyboard */,
-				097F4A4E1FB9983C003260CE /* 杨5.jpeg */,
+				09B22D711FDE73D700F7FC1D /* yangzixi.JPG */,
 				09851FC61FA1D6F800BDADA3 /* Assets.xcassets */,
 				09851FC81FA1D6F800BDADA3 /* LaunchScreen.storyboard */,
 				09851FCB1FA1D6F800BDADA3 /* Info.plist */,
@@ -755,6 +755,7 @@
 			baseConfigurationReference = 551E185FE6CBD23A3CE0C2BC /* Pods-Linkage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 877WMW87R7;
 				ENABLE_BITCODE = YES;
@@ -762,7 +763,7 @@
 				INFOPLIST_FILE = Linkage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linke;
+				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -773,6 +774,7 @@
 			baseConfigurationReference = 5F2C75A6D120920407EC49A8 /* Pods-Linkage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 877WMW87R7;
 				ENABLE_BITCODE = YES;
@@ -780,7 +782,7 @@
 				INFOPLIST_FILE = Linkage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linke;
+				PRODUCT_BUNDLE_IDENTIFIER = ProductTest.Linkage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

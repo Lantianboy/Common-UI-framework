@@ -11,6 +11,8 @@
 @class PBShop ;
 
 @interface PBShopCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *priceLable;
 
 @property (nonatomic, strong) PBShop * shop ;
 

@@ -12,7 +12,7 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <SVProgressHUD.h>
 #import "SheetView.h"
-@interface ViewController3 ()<SheetViewDelgate>
+@interface ViewController3 ()<SheetViewDelgate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) SheetView * sheet ;
 
@@ -32,42 +32,31 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor] ;
     self.navigationController.navigationBar.alpha = 1 ;
-    //[self.view addSubview:self.sheetView] ;
     
-    UIButton * btn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 200, 100, 50)] ;
-    btn.backgroundColor = [UIColor orangeColor] ;
-    [btn setTitle:@"点击分享" forState:UIControlStateNormal] ;
-    [btn addTarget:self action:@selector(sheet2) forControlEvents:UIControlEventTouchUpInside] ;
-    btn.layer.cornerRadius = 8.72 ;
-    [self.view addSubview:btn] ;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"更换图片" style:UIBarButtonItemStyleDone target:self action:@selector(sheet1)] ;
     
-    
-    UIButton * btn1 = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 400, 100, 50)] ;
-    btn1.backgroundColor = [UIColor orangeColor] ;
-    [btn1 setTitle:@"点击分享" forState:UIControlStateNormal] ;
-    [btn1 addTarget:self action:@selector(sheet1) forControlEvents:UIControlEventTouchUpInside] ;
-    btn1.layer.cornerRadius = 8.72 ;
-    [self.view addSubview:btn1] ;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点击分享" style:UIBarButtonItemStylePlain target:self action:@selector(sheet2)] ;
 
-    
 }
+
 
 - (void)sheet1
 {
     [self.sheet showWithController:self] ;
 }
 
+
 - (SheetView *)sheet
 {
     if (!_sheet) {
-        _sheet = [[SheetView alloc] initWithTitle:@"分享" message:@"请选择分享方式"] ;
+        _sheet = [[SheetView alloc] initWithTitle:@"更换图片" message:@"请选择方式"] ;
         
         _sheet.sheetDelgate = self ;
-        _sheet.actionTitles = @[@"微信",@"短信",@"取消"] ;
+        _sheet.actionTitles = @[@"拍照",@"从相册选取",@"取消"] ;
     }
     return _sheet ;
 }
-
+#pragma mark - 自定义sheetView类的代理方法。样式属性
 - (UIAlertActionStyle)sheetView:(SheetView *)sheetView actionStyleAtIndex:(NSInteger)index
 {
     if (index == 0) {
@@ -78,19 +67,48 @@
     return UIAlertActionStyleDefault ;
 }
 
+
+
+#pragma mark - 自定义sheetView类的代理方法。点击属性
 - (void)sheetView:(SheetView *)sheetView didSelectedAtIndex:(NSInteger)index
 {
     if (index == 0) {
-        NSLog(@"微信") ;
+        //判断相机是否可用 调用相机
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            UIImagePickerController * picker = [[UIImagePickerController alloc] init] ;
+            picker.delegate = self ;//设置代理
+            picker.allowsEditing = YES ;//是否允许对获得的图片进行编辑
+            //显示相机的所有控件 默认为yes
+            //picker.showsCameraControls = YES ;
+            //相机 默认是相册
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera ;
+            [self presentViewController:picker animated:YES completion:^{
+                
+            }] ;
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"相机不可用"] ;
+        }
+        NSLog(@"拍照") ;
+        
     }
     if (index == 1) {
-        NSLog(@"短信") ;
+        NSLog(@"从相册选取") ;
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init] ;
+        picker.delegate = self ;
+        picker.allowsEditing = YES ;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary ;
+        [self presentViewController:picker animated:YES completion:^{
+            
+        }] ;
+  
     }
     if (index == 2) {
         NSLog(@"取消") ;
     }
 }
 
+
+#pragma mark - 分享方式选择框
 - (void)sheet2
 {
     //直接创建sheetView
@@ -128,8 +146,7 @@
   
     
 }
-
-//sheetView的代理方法
+#pragma mark - sheetView的代理方法
 //- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 //{
 //    if (buttonIndex == 0) {
@@ -144,6 +161,7 @@
 //}
 
 
+#pragma mark - 友盟分享
 -(void)share:(UMSocialPlatformType)type  withText:(NSString*)string
 {
     UMSocialMessageObject *object = [UMSocialMessageObject messageObject];
@@ -165,8 +183,17 @@
     }];
 }
 
+#pragma mark - 点击cancel调用
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    NSLog(@"点击了取消") ;
+    [self dismissViewControllerAnimated:YES completion:nil] ;
+}
 
-
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil] ;
+}
 
 
 @end

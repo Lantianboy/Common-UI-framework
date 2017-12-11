@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,8 +47,8 @@
             <viewLayoutGuide key="safeArea" id="vHd-dC-CmT"/>
             <size key="customSize" width="212" height="170"/>
             <connections>
-                <outlet property="imageView" destination="KGI-Nz-ecd" id="RHs-aD-tOA"/>
-                <outlet property="priceLable" destination="mMb-F2-ZEp" id="ZMZ-yI-edB"/>
+                <outlet property="imageView" destination="KGI-Nz-ecd" id="XTh-R4-b8c"/>
+                <outlet property="priceLable" destination="mMb-F2-ZEp" id="iNK-GR-kPJ"/>
             </connections>
             <point key="canvasLocation" x="-49" y="20"/>
         </collectionViewCell>

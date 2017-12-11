@@ -16,6 +16,10 @@
 #import "PBShopCell.h"
 
 @interface ViewController2 ()<UICollectionViewDataSource,PBFallsLayoutDelegate>
+{
+    UIImage * image ;
+}
+
 
 @property (nonatomic, weak) UICollectionView * collectionView ;
 @property (nonatomic, strong) NSMutableArray * shops ;
@@ -39,7 +43,14 @@
     [self setupCollectionView] ;
     [self setupRefresh] ;
 
-    
+    NSURL * url = [NSURL URLWithString:@"http://s6.mogujie.cn/b7/bao/131010/10ssu8_kqytgrc7kfbgutcugfjeg5sckzsew_375x575.jpg_200x999.jpg"] ;
+    NSData * data = [NSData dataWithContentsOfURL:url] ;
+    image = [UIImage imageWithData:data] ;
+    UIImageView * im = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)] ;
+    //UIImage * imq = [UIImage imageWithData:image] ;
+    //im.backgroundColor = [UIColor redColor] ;
+    im.image = image ;
+    //[self.view addSubview:im] ;
     
 }
 static NSString *const ID = @"shop";
@@ -123,7 +134,7 @@ static NSString *const ID = @"shop";
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     self.collectionView.mj_footer.hidden = self.shops.count == 0 ;
-    return self.shops.count ? self.shops.count : 25;
+    return self.shops.count ? self.shops.count : 30;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
@@ -133,9 +144,12 @@ static NSString *const ID = @"shop";
         cell.shop = self.shops[indexPath.item] ;
     }
     
+   
     
-    
-    cell.backgroundColor = [UIColor greenColor] ;
+    //不知道为什么警告nib本地图片加载不出来
+    cell.imageView.image = image ;
+    cell.priceLable.text = @"123木头人" ;
+    //cell.imageView.backgroundColor = [UIColor redColor] ;
     
     return cell ;
 }

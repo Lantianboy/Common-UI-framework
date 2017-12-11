@@ -11,8 +11,6 @@
 #import <UIImageView+WebCache.h>
 
 @interface PBShopCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *priceLable;
 
 
 @end

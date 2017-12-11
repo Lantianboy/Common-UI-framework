@@ -17,6 +17,8 @@
 		0998B5481FB1810000039E9C /* TableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998B5471FB1810000039E9C /* TableViewDelegate.m */; };
 		099A1FDA1FA96D4C00844184 /* UIView+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 099A1FD91FA96D4C00844184 /* UIView+Hook.m */; };
 		099A1FDD1FA996E500844184 /* UIButton+btn.m in Sources */ = {isa = PBXBuildFile; fileRef = 099A1FDB1FA996E500844184 /* UIButton+btn.m */; };
+		09B22D761FDE790D00F7FC1D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09B22D751FDE790D00F7FC1D /* TableViewCell.xib */; };
+		09B22D791FDE7B1500F7FC1D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B22D781FDE7B1500F7FC1D /* TableViewCell.m */; };
 		09E1E4F61F8CBC36001F0919 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E4F51F8CBC36001F0919 /* AppDelegate.m */; };
 		09E1E4F91F8CBC36001F0919 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E4F81F8CBC36001F0919 /* ViewController.m */; };
 		09E1E4FC1F8CBC36001F0919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09E1E4FA1F8CBC36001F0919 /* Main.storyboard */; };
@@ -67,6 +69,9 @@
 		099A1FD91FA96D4C00844184 /* UIView+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hook.m"; sourceTree = "<group>"; };
 		099A1FDB1FA996E500844184 /* UIButton+btn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+btn.m"; sourceTree = "<group>"; };
 		099A1FDC1FA996E500844184 /* UIButton+btn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+btn.h"; sourceTree = "<group>"; };
+		09B22D751FDE790D00F7FC1D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		09B22D771FDE7B1500F7FC1D /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		09B22D781FDE7B1500F7FC1D /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		09E1E4F11F8CBC36001F0919 /* wwwww.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwwww.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1E4F41F8CBC36001F0919 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09E1E4F51F8CBC36001F0919 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +145,9 @@
 				09FFCB741F9DDE7900A7EB8B /* ViewXib.xib */,
 				0998B5461FB1810000039E9C /* TableViewDelegate.h */,
 				0998B5471FB1810000039E9C /* TableViewDelegate.m */,
+				09B22D771FDE7B1500F7FC1D /* TableViewCell.h */,
+				09B22D781FDE7B1500F7FC1D /* TableViewCell.m */,
+				09B22D751FDE790D00F7FC1D /* TableViewCell.xib */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09E1E5011F8CBC36001F0919 /* LaunchScreen.storyboard in Resources */,
+				09B22D761FDE790D00F7FC1D /* TableViewCell.xib in Resources */,
 				09E1E4FE1F8CBC36001F0919 /* Assets.xcassets in Resources */,
 				09FFCB751F9DDE7900A7EB8B /* ViewXib.xib in Resources */,
 				09E1E4FC1F8CBC36001F0919 /* Main.storyboard in Resources */,
@@ -363,6 +372,7 @@
 				099A1FDA1FA96D4C00844184 /* UIView+Hook.m in Sources */,
 				096A8B571F9460D7004990FD /* ViewController3.m in Sources */,
 				09743A1C1F95CB020033726C /* ViewController5.m in Sources */,
+				09B22D791FDE7B1500F7FC1D /* TableViewCell.m in Sources */,
 				096A8B5A1F9460E1004990FD /* ViewController4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

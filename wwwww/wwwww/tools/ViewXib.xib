@@ -23,7 +23,7 @@
             <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="DQA-Jw-Drm"/>
-            <point key="canvasLocation" x="-27" y="-66"/>
+            <point key="canvasLocation" x="-27.5" y="-66"/>
         </view>
     </objects>
 </document>

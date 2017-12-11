@@ -9,6 +9,7 @@
 #import "TableViewDelegate.h"
 #import "UIButton+btn.h"
 #import "ViewController.h"
+#import "TableViewCell.h"
 @interface TableViewDelegate()
 @property (nonatomic, strong) NSMutableArray   *dataList;
 @property (nonatomic, copy)   selectCell selectBlock;
@@ -33,20 +34,26 @@ selectBlock:selectBlock];
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    }
-    //cell.textLabel.text = indexPath.section % 2 ? @"你好！" : @"不好！" ;
-    //cell.backgroundColor = indexPath.section % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
-    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 10, 50, 30) borderColor:[UIColor redColor] borderWidth:2] ;
-    //btn.backgroundColor = [UIColor orangeColor] ;
-    //[btn setTitleColor:[UIColor redColor] forState:0] ;
     
-    [btn setTitle:@"111" forState:UIControlStateNormal] ;
     
-    [cell addSubview:btn] ;
-    cell.textLabel.text = self.dataList[indexPath.section];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+//    }
+//    //cell.textLabel.text = indexPath.section % 2 ? @"你好！" : @"不好！" ;
+//    //cell.backgroundColor = indexPath.section % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
+//    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 10, 50, 30) borderColor:[UIColor redColor] borderWidth:2] ;
+//    //btn.backgroundColor = [UIColor orangeColor] ;
+//    //[btn setTitleColor:[UIColor redColor] forState:0] ;
+//
+//    [btn setTitle:@"111" forState:UIControlStateNormal] ;
+//
+//    [cell addSubview:btn] ;
+//    cell.textLabel.text = self.dataList[indexPath.section];
+    
+    TableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier] ;
+    cell = [[[NSBundle mainBundle] loadNibNamed:@"TableViewCell" owner:self options:nil] lastObject] ;
+    
     return cell;
 }
 
@@ -63,6 +70,11 @@ selectBlock:selectBlock];
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1 ;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100 ;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
