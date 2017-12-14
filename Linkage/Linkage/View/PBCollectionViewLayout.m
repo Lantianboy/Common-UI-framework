@@ -81,7 +81,7 @@ static const UIEdgeInsets PBDefaultUIEdgeInsets = {10, 10, 10, 10};      ///< �
                  self.columnMargin * (self.columnCount - 1)) / self.columnCount ;
     
     //cell的高度
-    NSUInteger randomOfHeight = arc4random() % 100 ;
+    NSUInteger randomOfHeight = arc4random() % 150 ;
     CGFloat h = w * (randomOfHeight >= 50 ? 250 : 320) / 200 ;
     
     //cell应该拼接的列数

@@ -33,22 +33,22 @@
     
    // UITabBarController *tabVC = [[UITabBarController alloc] init];
     ViewController *mainVC = [[ViewController alloc] init];
-    mainVC.title = @"Home" ;
+    mainVC.title = @"手机" ;
     mainVC.tabBarItem.image = [UIImage imageNamed:@"tabbar_home"] ;
     mainVC.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_home_selected"] ;
     
     ViewController1 * vc2 = [[ViewController1 alloc] init] ;
-    vc2.title = @"yi" ;
+    vc2.title = @"钱包" ;
     vc2.tabBarItem.image = [UIImage imageNamed:@"tabbar_message_center"] ;
     vc2.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_message_center_selected"] ;
     
     ViewController2 * vc3 = [[ViewController2 alloc] init] ;
-    vc3.title = @"er" ;
+    vc3.title = @"钥匙" ;
     vc3.tabBarItem.image = [UIImage imageNamed:@"tabbar_discover"] ;
     vc3.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_discover_selected"] ;
     
     ViewController3 * vc4 = [[ViewController3 alloc] init] ;
-    vc4.title = @"san" ;
+    vc4.title = @"充电宝" ;
     vc4.tabBarItem.image = [UIImage imageNamed:@"tabbar_profile"] ;
     vc4.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_profile_selected"] ;
     

@@ -6,6 +6,6 @@ pod "SDWebImage"
 pod "SVProgressHUD"
 pod "UMengUShare/UI"
 pod "UMengUShare/Social/ReducedWeChat"
-pod "UMengUShare/Social/ReducedQQ"
 pod "UMengUShare/Social/SMS"
+pod "SKTagView"
 end

@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"分类" ;
+   
     self.view.backgroundColor = [UIColor whiteColor] ;
     self.navigationController.navigationBar.alpha = 1 ;
     
@@ -109,6 +109,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId] ;
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId] ;
    cell.backgroundColor = indexPath.row % 2 ? [UIColor lightGrayColor] : [UIColor whiteColor] ;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone] ;
     
     NSMutableArray *dataArray;
     if (tableView == self.leftTableView) {
@@ -196,6 +197,7 @@ static NSString *const rookieCellId = @"rookieCellId";
         _rookieTableView.dataSource = self;
         _rookieTableView.rowHeight = 40;
         _rookieTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
         
 //        SLWeakSelf
 //        _rookieTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

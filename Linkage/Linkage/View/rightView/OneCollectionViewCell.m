@@ -24,6 +24,7 @@
     if (!_backView) {
         _backView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, self.frame.size.width - 20, self.frame.size.width - 20)] ;
         _backView.backgroundColor = [UIColor grayColor] ;
+        
     }
     return _backView ;
 }

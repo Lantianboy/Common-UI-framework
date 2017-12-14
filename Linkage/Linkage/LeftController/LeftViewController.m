@@ -29,7 +29,6 @@
     [super viewDidLoad];
     
     
-    
     self.view.backgroundColor = [UIColor orangeColor] ;
     
     UIImageView * imageV = [[UIImageView alloc] initWithFrame:self.view.bounds] ;
