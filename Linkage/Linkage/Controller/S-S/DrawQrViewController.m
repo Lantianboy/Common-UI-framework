@@ -26,7 +26,7 @@
 //生成二维码
 - (IBAction)createQrBut:(id)sender {
     
-    if (self.linkTfd.text == nil ) {
+    if (self.linkTfd.text == nil || self.linkTfd.text.length == 0) {
         [self showInfo:@"请先输入"] ;
     }else{
     
