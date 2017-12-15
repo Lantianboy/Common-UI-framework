@@ -269,14 +269,14 @@ static NSString *const ID = @"shop";
     }
     return _sktagView ;
 }
-
+#pragma mark - 开始编辑
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
     self.sktagView.hidden = NO ;
     self.bgView.hidden = NO ;
     return YES ;
 }
-
+#pragma mark - searchbar右边取消按钮方法
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     [self.searchBar resignFirstResponder] ;
@@ -285,7 +285,7 @@ static NSString *const ID = @"shop";
     self.bgView.hidden = YES ;
     
 }
-
+#pragma mark - UIsearchbar text改变调用
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     NSLog(@"%@",searchText) ;
@@ -298,6 +298,7 @@ static NSString *const ID = @"shop";
     }
 }
 
+#pragma mark - 创建萌版
 - (UIView *)bgView
 {
     if (!_bgView) {
@@ -310,6 +311,7 @@ static NSString *const ID = @"shop";
     return _bgView ;
 }
 
+#pragma mark - 萌版点击手势方法
 - (void)bgViewTap:(UITapGestureRecognizer *)tap
 {
     self.sktagView.hidden = YES ;
@@ -317,17 +319,13 @@ static NSString *const ID = @"shop";
     self.bgView.hidden = YES ;
 }
 
+#pragma mark - 通知方法
 - (void)text:(NSNotification *)notifica
 {
     NSLog(@"--%@",notifica.object) ;
     self.searchBar.text = notifica.object ;
     self.sktagView.hidden = YES ;
     self.bgView.hidden = YES ;
-}
-
-- (void) searchDisplayControllerWillEndSearch:(UISearchController *)controller;
-{
-    self.bgView.hidden = NO ;
 }
 
 

@@ -12,9 +12,20 @@
 #import <UMSocialCore/UMSocialCore.h>
 #import <SVProgressHUD.h>
 #import "SheetView.h"
-@interface ViewController3 ()<SheetViewDelgate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+#import "ZCWaterWaveView.h"
+#import "SScanViewController.h"
+#import "DrawQrViewController.h"
+#import "DrawBarViewController.h"
+@interface ViewController3 ()<SheetViewDelgate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource>
+{
+    UIImageView * _topView ;
+    UIImage * imageV ;
+}
 
 @property (nonatomic, strong) SheetView * sheet ;
+@property (nonatomic, strong) ZCWaterWaveView * zcwater ;
+@property (nonatomic, strong) UITableView * tableView ;
+@property (nonatomic, strong) NSMutableArray * array ;
 
 @end
 
@@ -27,16 +38,23 @@
     [self.mm_drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeNone] ;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor] ;
-    self.navigationController.navigationBar.alpha = 1 ;
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"更换图片" style:UIBarButtonItemStyleDone target:self action:@selector(sheet1)] ;
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点击分享" style:UIBarButtonItemStylePlain target:self action:@selector(sheet2)] ;
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor] ;
 
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:91/255.0 green:142/255.0 blue:234/255.0 alpha:0.5];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"更换图片" style:UIBarButtonItemStyleDone target:self action:@selector(sheet1)] ;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"点击分享" style:UIBarButtonItemStylePlain target:self action:@selector(sheet2)] ;
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor] ;
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor] ;
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil] ;
+    
+    self.zcwater = [[ZCWaterWaveView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)] ;
+    [self.view addSubview:self.tableView] ;
+    [self.view addSubview:self.zcwater] ;
+    
+    
+    
 }
 
 
@@ -127,7 +145,7 @@
     UIAlertAction * sheet2 = [UIAlertAction actionWithTitle:@"微信" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"微信") ;
         __weak typeof(self) weakSelf = self;
-        [weakSelf share:UMSocialPlatformType_WechatSession withText:@"你好啊"];
+        [weakSelf share:UMSocialPlatformType_WechatSession withText:@"吃饭了吗"];
         
     }] ;
     
@@ -190,10 +208,106 @@
     [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
+#pragma mark - 图片选择器代理
+//(上传图片的网络请求也是在这里)
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
+    
+    [picker dismissViewControllerAnimated:YES completion:^{}] ;
+    //通过key值获取图片
+    imageV = [info objectForKey:UIImagePickerControllerOriginalImage] ;
+    //ZCWaterWaveView * zcwater = [[ZCWaterWaveView alloc] init] ;
+    self.zcwater.imgV.image = imageV ;//给imageView赋值已选择的图片
+    
     [self dismissViewControllerAnimated:YES completion:nil] ;
 }
 
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 270, SCREEN_WIDTH, SCREEN_HEIGHT - 260)] ;
+        _tableView.dataSource = self ;
+        _tableView.delegate = self ;
+        _tableView.backgroundColor = [UIColor whiteColor] ;
+        _tableView.tableFooterView = [UIView new] ;
+        
+    }
+    return _tableView ;
+}
+
+- (NSMutableArray *)array
+{
+    
+    if (!_array) {
+        _array = [NSMutableArray arrayWithObjects:@"扫一扫",@"绘制二维码",@"绘制条形码", nil] ;
+    }
+    return _array ;
+
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1 ;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.array.count ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * str = @"cell" ;
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:str] ;
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str] ;
+    }
+    
+    cell.textLabel.text = self.array[indexPath.row] ;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone] ;
+    return cell ;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES] ;
+    if (indexPath.row == 0) {
+        SScanViewController * scanVC = [[SScanViewController alloc] initWithQrType:MMScanTypeAll onFinish:^(NSString *result, NSError *error) {
+            if (error) {
+                NSLog(@"error:%@",error) ;
+            }else{
+                NSLog(@"扫描结果:%@",result) ;
+                [self showInfo:result] ;
+            }
+        }] ;
+        scanVC.hidesBottomBarWhenPushed = YES ;
+        [self.navigationController pushViewController:scanVC animated:YES] ;
+        
+    }else if (indexPath.row == 1) {
+        DrawQrViewController * drawQrVC = [[DrawQrViewController alloc] init] ;
+        [self.navigationController pushViewController:drawQrVC animated:YES] ;
+    }else{
+        DrawBarViewController * barVC = [[DrawBarViewController alloc] init] ;
+        [self.navigationController pushViewController:barVC animated:YES] ;
+    }
+    
+}
+
+
+- (void)showInfo:(NSString *)str {
+    [self showInfo:str andTitle:@"提示"] ;
+}
+
+- (void)showInfo:(NSString *)str andTitle:(NSString *)title
+{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:title message:str preferredStyle:UIAlertControllerStyleAlert] ;
+    
+    UIAlertAction * action1 = ({
+        UIAlertAction * action = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:NULL] ;
+        action ;
+    }) ;
+    [alert addAction:action1] ;
+    [self presentViewController:alert animated:YES completion:nil] ;
+}
 
 @end
