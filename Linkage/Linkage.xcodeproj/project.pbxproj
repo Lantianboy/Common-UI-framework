@@ -37,6 +37,9 @@
 		0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E32D1FB0573000B3C3DF /* SYHeaderView.m */; };
 		0998E3321FB0676400B3C3DF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0998E3311FB0676400B3C3DF /* UIView+Frame.m */; };
 		099D24951FDFD1EA00A1B47E /* ZSKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D24941FDFD1EA00A1B47E /* ZSKTagView.m */; };
+		09A56C4E1FECD38D00BBF5C4 /* pb1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09A56C4D1FECD38C00BBF5C4 /* pb1.plist */; };
+		09AC08D91FE8F3790069B615 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AC08D81FE8F3790069B615 /* TabBarViewController.m */; };
+		09AC08DC1FE901EE0069B615 /* QrResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AC08DB1FE901EE0069B615 /* QrResultViewController.m */; };
 		09D55EFD1FBD72BF00DC5B6C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55EFC1FBD72BF00DC5B6C /* libsqlite3.tbd */; };
 		09D55EFF1FBD72C900DC5B6C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55EFE1FBD72C900DC5B6C /* CoreGraphics.framework */; };
 		09D55F011FBD731E00DC5B6C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D55F001FBD731E00DC5B6C /* SystemConfiguration.framework */; };
@@ -142,7 +145,11 @@
 		0998E3311FB0676400B3C3DF /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		099D24931FDFD1EA00A1B47E /* ZSKTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSKTagView.h; sourceTree = "<group>"; };
 		099D24941FDFD1EA00A1B47E /* ZSKTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSKTagView.m; sourceTree = "<group>"; };
-		09A316EC1FBEC11D007319F4 /* 1.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = 1.plist; sourceTree = "<group>"; };
+		09A56C4D1FECD38C00BBF5C4 /* pb1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pb1.plist; sourceTree = "<group>"; };
+		09AC08D71FE8F3790069B615 /* TabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		09AC08D81FE8F3790069B615 /* TabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		09AC08DA1FE901EE0069B615 /* QrResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QrResultViewController.h; sourceTree = "<group>"; };
+		09AC08DB1FE901EE0069B615 /* QrResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QrResultViewController.m; sourceTree = "<group>"; };
 		09D55EFC1FBD72BF00DC5B6C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		09D55EFE1FBD72C900DC5B6C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		09D55F001FBD731E00DC5B6C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -354,7 +361,9 @@
 				0998E3251FB03A3800B3C3DF /* ViewController2.m */,
 				0998E3271FB03A4100B3C3DF /* ViewController3.h */,
 				0998E3281FB03A4100B3C3DF /* ViewController3.m */,
-				09A316EC1FBEC11D007319F4 /* 1.plist */,
+				09AC08D71FE8F3790069B615 /* TabBarViewController.h */,
+				09AC08D81FE8F3790069B615 /* TabBarViewController.m */,
+				09A56C4D1FECD38C00BBF5C4 /* pb1.plist */,
 			);
 			path = TabbarController;
 			sourceTree = "<group>";
@@ -412,6 +421,8 @@
 				09E827941FE3B09100D34BC9 /* DrawQrViewController.h */,
 				09E827951FE3B09100D34BC9 /* DrawQrViewController.m */,
 				09E827A11FE3C21B00D34BC9 /* DrawQrView.xib */,
+				09AC08DA1FE901EE0069B615 /* QrResultViewController.h */,
+				09AC08DB1FE901EE0069B615 /* QrResultViewController.m */,
 				09E827981FE3B0FD00D34BC9 /* DrawBarViewController.h */,
 				09E827991FE3B0FD00D34BC9 /* DrawBarViewController.m */,
 			);
@@ -551,6 +562,7 @@
 			files = (
 				09E827A21FE3C21B00D34BC9 /* DrawQrView.xib in Resources */,
 				09851FCA1FA1D6F800BDADA3 /* LaunchScreen.storyboard in Resources */,
+				09A56C4E1FECD38D00BBF5C4 /* pb1.plist in Resources */,
 				09851FC71FA1D6F800BDADA3 /* Assets.xcassets in Resources */,
 				09851FC51FA1D6F800BDADA3 /* Main.storyboard in Resources */,
 				097F4A4D1FB98463003260CE /* PBShopCell.xib in Resources */,
@@ -635,6 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09AC08DC1FE901EE0069B615 /* QrResultViewController.m in Sources */,
 				098729921FA6FD0200AC2F2F /* LinkageMenuView.m in Sources */,
 				097F4A481FB97EF8003260CE /* PBShop.m in Sources */,
 				0998E32E1FB0573000B3C3DF /* SYHeaderView.m in Sources */,
@@ -645,6 +658,7 @@
 				099D24951FDFD1EA00A1B47E /* ZSKTagView.m in Sources */,
 				095FB0951FAB0E9E00BC491B /* LeftViewController.m in Sources */,
 				09E8279D1FE3B72300D34BC9 /* SScanView.m in Sources */,
+				09AC08D91FE8F3790069B615 /* TabBarViewController.m in Sources */,
 				095FB0C21FAB119E00BC491B /* MMDrawerVisualState.m in Sources */,
 				09851FC21FA1D6F800BDADA3 /* ViewController.m in Sources */,
 				09E827A01FE3B7F700D34BC9 /* SScanViewController.m in Sources */,

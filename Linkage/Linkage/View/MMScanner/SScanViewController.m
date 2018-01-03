@@ -82,7 +82,9 @@
         //初始化链接对象
         self.session = [[AVCaptureSession alloc] init];
         //设置采集质量
-        [self.session setSessionPreset:AVCaptureSessionPresetInputPriority];
+        [self.session setSessionPreset:AVCaptureSessionPresetHigh];
+        [self.session addInput:self.input] ;
+        [self.session addOutput:self.output] ;
         //将输入输出流对象添加到链接对象
         if ([self.session canAddInput:self.input]) [self.session addInput:self.input];
         if ([self.session canAddOutput:self.output]) [self.session addOutput:self.output];
@@ -180,7 +182,7 @@
     if (self.scanFinish) {
         //回调结果到页面上，也可以在此处做跳转操作,如果不想回去，直接注释下面的代码
         if (self.navigationController &&[self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]) {
-            [self.navigationController popViewControllerAnimated:YES];
+//            [self.navigationController popViewControllerAnimated:YES];
             self.scanFinish(url, nil);
         }
     }
@@ -491,7 +493,7 @@
             finish(scanResult);
         }
     } else {
-        [self showError:@"图片中未识别到二维码"];
+        [self showError:@"未识别到图片中二维码"];
     }
 }
 #pragma mark - 创建二维码/条形码

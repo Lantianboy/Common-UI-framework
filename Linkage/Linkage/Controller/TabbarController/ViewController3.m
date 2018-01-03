@@ -16,6 +16,7 @@
 #import "SScanViewController.h"
 #import "DrawQrViewController.h"
 #import "DrawBarViewController.h"
+#import "QrResultViewController.h"
 @interface ViewController3 ()<SheetViewDelgate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UIImageView * _topView ;
@@ -52,23 +53,17 @@
     self.zcwater = [[ZCWaterWaveView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)] ;
     [self.view addSubview:self.tableView] ;
     [self.view addSubview:self.zcwater] ;
-    
-    
-    
 }
-
 
 - (void)sheet1
 {
     [self.sheet showWithController:self] ;
 }
 
-
 - (SheetView *)sheet
 {
     if (!_sheet) {
         _sheet = [[SheetView alloc] initWithTitle:@"更换图片" message:@"请选择方式"] ;
-        
         _sheet.sheetDelgate = self ;
         _sheet.actionTitles = @[@"拍照",@"从相册选取",@"取消"] ;
     }
@@ -84,8 +79,6 @@
     }
     return UIAlertActionStyleDefault ;
 }
-
-
 
 #pragma mark - 自定义sheetView类的代理方法。点击属性
 - (void)sheetView:(SheetView *)sheetView didSelectedAtIndex:(NSInteger)index
@@ -125,7 +118,6 @@
     }
 }
 
-
 #pragma mark - 分享方式选择框
 - (void)sheet2
 {
@@ -146,7 +138,6 @@
         NSLog(@"微信") ;
         __weak typeof(self) weakSelf = self;
         [weakSelf share:UMSocialPlatformType_WechatSession withText:@"吃饭了吗"];
-        
     }] ;
     
     UIAlertAction * sheet3 = [UIAlertAction actionWithTitle:@"短信" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
@@ -161,9 +152,8 @@
     [alert addAction:sheet3] ;
     //显示
     [self presentViewController:alert animated:YES completion:nil] ;
-  
-    
 }
+
 #pragma mark - sheetView的代理方法
 //- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 //{
@@ -177,7 +167,6 @@
 //        [weakSelf share:UMSocialPlatformType_Sms withText:@"sjdjsid"];
 //    }
 //}
-
 
 #pragma mark - 友盟分享
 -(void)share:(UMSocialPlatformType)type  withText:(NSString*)string
@@ -242,7 +231,6 @@
         _array = [NSMutableArray arrayWithObjects:@"扫一扫",@"绘制二维码",@"绘制条形码", nil] ;
     }
     return _array ;
-
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -270,29 +258,35 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES] ;
     if (indexPath.row == 0) {
         SScanViewController * scanVC = [[SScanViewController alloc] initWithQrType:MMScanTypeAll onFinish:^(NSString *result, NSError *error) {
             if (error) {
                 NSLog(@"error:%@",error) ;
+                [self showInfo:@"扫描失败"] ;
             }else{
                 NSLog(@"扫描结果:%@",result) ;
-                [self showInfo:result] ;
+                QrResultViewController * qr = [[QrResultViewController alloc] init] ;
+                qr.sta.text = result ;
+                [self.navigationController pushViewController:qr animated:YES] ;
+                
             }
         }] ;
         scanVC.hidesBottomBarWhenPushed = YES ;
         [self.navigationController pushViewController:scanVC animated:YES] ;
         
     }else if (indexPath.row == 1) {
+        
         DrawQrViewController * drawQrVC = [[DrawQrViewController alloc] init] ;
+        drawQrVC.hidesBottomBarWhenPushed = YES ;
         [self.navigationController pushViewController:drawQrVC animated:YES] ;
     }else{
         DrawBarViewController * barVC = [[DrawBarViewController alloc] init] ;
+        barVC.hidesBottomBarWhenPushed = YES ;
         [self.navigationController pushViewController:barVC animated:YES] ;
     }
-    
 }
-
 
 - (void)showInfo:(NSString *)str {
     [self showInfo:str andTitle:@"提示"] ;

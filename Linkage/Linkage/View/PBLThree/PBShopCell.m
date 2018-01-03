@@ -16,14 +16,6 @@
 @end
 @implementation PBShopCell
 
-- (void)setShop:(PBShop *)shop
-{
-    _shop = shop ;
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:shop.img]
-                      placeholderImage:[UIImage imageNamed:@"杨5.jpge"]] ;
-    self.priceLable.text = shop.price ;
-    NSLog(@"111") ;
-}
 
 
 @end

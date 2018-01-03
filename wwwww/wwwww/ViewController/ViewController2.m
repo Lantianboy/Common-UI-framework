@@ -8,7 +8,7 @@
 
 #import "ViewController2.h"
 
-@interface ViewController2 ()
+@interface ViewController2 ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
@@ -16,27 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor whiteColor] ;
-    [self.view setBackgroundColor:[UIColor redColor]] ;
+    self.view.backgroundColor = [UIColor whiteColor] ;
+    self.title = @"数据持久化" ;
+    UITableView * tab = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)] ;
+    tab.delegate = self ;
+    tab.dataSource = self ;
+    tab.tableFooterView = [UIView new] ;
+    [self.view addSubview:tab] ;
+    
    
-    // Do any additional setup after loading the view.
+    
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    return NO ;
 }
 
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
